@@ -10,6 +10,10 @@ ORG-EP is an application profile of the [W3C Organization Ontology](https://www.
   - [SHACL](./org-ep.shacl.ttl)
 - [Version 0.3.1](./0.3.1/)
 
+## ORG-EP at a glance
+
+![ORG-EP diagram](org-ep.svg)
+
 ## Licence
 
 ORG-EP is distributed under the terms and conditions described in the [European Parliament Legal Notice](https://www.europarl.europa.eu/legal-notice/).
