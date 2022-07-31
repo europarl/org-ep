@@ -12,4 +12,4 @@ ORG-EP is an application profile of the [W3C Organization Ontology](https://www.
 
 ## Licence
 
-ORG-EP is distributed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+ORG-EP is distributed under the terms and conditions described in the [European Parliament Legal Notice](https://www.europarl.europa.eu/legal-notice/).
