@@ -38,7 +38,7 @@
   dcterms:title "ORG-EP Application Profile"@en;
   dcterms:type <http://publications.europa.eu/resource/authority/dataset-type/APROF>;
   vann:usageNote "This version of ORG-EP is a draft specification and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress."@en;
-  owl:versionIRI <https://data.europarl.europa.eu/def/org-ep/0.3/>;
+  owl:versionIRI <https://data.europarl.europa.eu/def/org-ep/0.3.1/>;
   owl:versionInfo "0.3.1";
   skos:hasTopConcept org-ep:P10, org-ep:P100, org-ep:P101, org-ep:P104, org-ep:P105,
     org-ep:P108, org-ep:P109, org-ep:P11, org-ep:P12, org-ep:P13, org-ep:P14, org-ep:P15,
