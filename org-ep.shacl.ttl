@@ -1,7 +1,7 @@
 @prefix adms: <https://www.w3.org/ns/adms#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix eli-dl: <http://data.europa.eu/eli/eli-draft-legislation-ontology#> .
 @prefix epvoc: <https://data.europarl.europa.eu/def/epvoc#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
@@ -26,17 +26,19 @@
 
 <https://data.europarl.europa.eu/def/org-ep#> a owl:Ontology, skos:ConceptScheme,
     adms:Asset;
-  dct:conformsTo <https://www.w3.org/TR/shacl>;
-  dct:created "2021-11-11"^^xsd:date;
-  dct:creator <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
-  dct:description "ORG-EP is an application profile of the W3C Organization Ontology, specifically designed to describe the organisational components of the European Parliament (MEPs, Parliamentary Groups, Committees, etc.)."@en;
-  dct:license <https://www.europarl.europa.eu/legal-notice/en/>;
-  dct:modified "2022-07-01T00:00:00.000Z"^^xsd:dateTime;
-  dct:publisher <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
-  dct:rigthsHolder <http://publications.europa.eu/resource/dataset/corporate-body/EURUN>;
-  dct:title "ORG-EP Application Profile"@en;
-  dct:type <http://publications.europa.eu/resource/authority/dataset-type/APROF>;
-  owl:versionIRI <https://data.europarl.europa.eu/def/org-ep#>;
+  dcterms:conformsTo <https://www.w3.org/TR/shacl>;
+  dcterms:created "2021-11-11"^^xsd:date;
+  dcterms:creator <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:description "ORG-EP is an application profile of the W3C Organization Ontology, specifically designed to describe the organisational components of the European Parliament (MEPs, Parliamentary Groups, Committees, etc.)."@en;
+  dcterms:issued "2022-08-19"^^xsd:date;
+  dcterms:license <https://www.europarl.europa.eu/legal-notice/>;
+  dcterms:modified "2022-08-17"^^xsd:date;
+  dcterms:publisher <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:rigthsHolder <http://publications.europa.eu/resource/dataset/corporate-body/EURUN>;
+  dcterms:title "ORG-EP Application Profile"@en;
+  dcterms:type <http://publications.europa.eu/resource/authority/dataset-type/APROF>;
+  vann:usageNote "This version of ORG-EP is a draft specification and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress."@en;
+  owl:versionIRI <https://data.europarl.europa.eu/def/org-ep/0.3.1/>;
   owl:versionInfo "0.3.1";
   skos:hasTopConcept org-ep:P10, org-ep:P100, org-ep:P101, org-ep:P104, org-ep:P105,
     org-ep:P108, org-ep:P109, org-ep:P11, org-ep:P12, org-ep:P13, org-ep:P14, org-ep:P15,
@@ -49,7 +51,13 @@
     org-ep:P72, org-ep:P75, org-ep:P78, org-ep:P81, org-ep:P84, org-ep:P85, org-ep:P88,
     org-ep:P89, org-ep:P9, org-ep:P92, org-ep:P93, org-ep:P96, org-ep:P97;
   adms:status <http://publications.europa.eu/resource/dataset/dataset-status/DEVELOP>;
-  adms:versionNotes """2022-07-01
+  adms:versionNotes """2022-08-11:
+- replace blank nodes by URIs for epvoc:ContactPoint and dcterms:PeriodOfTime. Also add examples and patterns.
+2022-08-08
+- cardinality set to min 0 for all main classes (except dc:identifier)
+2022-08-02
+- fixed license url
+2022-07-01
 - add missing class eli-dl:ParliamentaryTerm for dcterms:source 
 2022-06-20
 - fixed typos
@@ -81,9 +89,9 @@ org:Organization a rdfs:Class, sh:NodeShape;
   rdfs:label "Organization"@en;
   skos:example <https://data.europarl.europa.eu/org/1234>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7477 .
+  sh:ignoredProperties _:node1g8tmdfl9x9233 .
 
-_:node1g5oj6hp8x7477 rdf:first rdf:type;
+_:node1g8tmdfl9x9233 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 org:Organization sh:nodeKind sh:IRI;
@@ -96,9 +104,9 @@ foaf:Person a rdfs:Class, sh:NodeShape;
   rdfs:label "Person"@en;
   skos:example <https://data.europarl.europa.eu/person/124936>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7478 .
+  sh:ignoredProperties _:node1g8tmdfl9x9234 .
 
-_:node1g5oj6hp8x7478 rdf:first rdf:type;
+_:node1g8tmdfl9x9234 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 foaf:Person sh:nodeKind sh:IRI;
@@ -114,9 +122,9 @@ org:Membership a rdfs:Class, sh:NodeShape;
   rdfs:label "Membership"@en;
   skos:example <https://data.europarl.europa.eu/membership/12345-f-999900001>, <https://data.europarl.europa.eu/membership/12345-m-999900001>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7479 .
+  sh:ignoredProperties _:node1g8tmdfl9x9235 .
 
-_:node1g5oj6hp8x7479 rdf:first rdf:type;
+_:node1g8tmdfl9x9235 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 org:Membership sh:nodeKind sh:IRI;
@@ -128,9 +136,9 @@ vcard:Voice a rdfs:Class, sh:NodeShape;
   rdfs:label "Voice"@en;
   skos:example <https://data.europarl.europa.eu/tel/33388175139>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7480 .
+  sh:ignoredProperties _:node1g8tmdfl9x9236 .
 
-_:node1g5oj6hp8x7480 rdf:first rdf:type;
+_:node1g8tmdfl9x9236 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 vcard:Voice sh:nodeKind sh:IRI;
@@ -142,9 +150,9 @@ vcard:Fax a rdfs:Class, sh:NodeShape;
   rdfs:label "Fax"@en;
   skos:example <https://data.europarl.europa.eu/tel/33388175139>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7481 .
+  sh:ignoredProperties _:node1g8tmdfl9x9237 .
 
-_:node1g5oj6hp8x7481 rdf:first rdf:type;
+_:node1g8tmdfl9x9237 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 vcard:Fax sh:nodeKind sh:IRI;
@@ -152,38 +160,43 @@ vcard:Fax sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/tel/[0-9]*$";
   sh:property org-ep:P69 .
 
-dct:PeriodOfTime a rdfs:Class, sh:NodeShape;
+dcterms:PeriodOfTime a rdfs:Class, sh:NodeShape;
   rdfs:comment "An interval of time that is named or defined by its start and end dates."@en;
   rdfs:label "Period of time"@en;
   skos:example <https://data.europarl.europa.eu/time-period/pt_9>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7482 .
+  sh:ignoredProperties _:node1g8tmdfl9x9238 .
 
-_:node1g5oj6hp8x7482 rdf:first rdf:type;
+_:node1g8tmdfl9x9238 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
-dct:PeriodOfTime sh:order 6;
+dcterms:PeriodOfTime sh:nodeKind sh:IRI;
+  sh:order 6;
+  sh:pattern "^https://data.europarl.europa.eu/time-period/.*$";
   sh:property org-ep:P57, org-ep:P58 .
 
 epvoc:ContactPoint a rdfs:Class, sh:NodeShape;
   rdfs:comment "A contact point for a person, an organisation"@en;
   rdfs:label "Contact point"@en;
+  skos:example <https://data.europarl.europa.eu/contact-point/58766-m-16341-M05047>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7483 .
+  sh:ignoredProperties _:node1g8tmdfl9x9239 .
 
-_:node1g5oj6hp8x7483 rdf:first rdf:type;
+_:node1g8tmdfl9x9239 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
-epvoc:ContactPoint sh:order 7;
+epvoc:ContactPoint sh:nodeKind sh:IRI;
+  sh:order 7;
+  sh:pattern "^https://data.europarl.europa.eu/contact-point/.*$";
   sh:property org-ep:P61, org-ep:P62, org-ep:P63 .
 
 eli-dl:ParliamentaryTerm a rdfs:Class, sh:NodeShape;
   rdfs:label "Parliamentary term"@en;
   skos:example <https://data.europarl.europa.eu/org/ep-9>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7484 .
+  sh:ignoredProperties _:node1g8tmdfl9x9240 .
 
-_:node1g5oj6hp8x7484 rdf:first rdf:type;
+_:node1g8tmdfl9x9240 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 eli-dl:ParliamentaryTerm sh:nodeKind sh:IRI;
@@ -196,9 +209,9 @@ foaf:OnlineAccount a rdfs:Class, sh:NodeShape;
   rdfs:label "Online account"@en;
   skos:example <https://twitter.com/mariearenaps>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7485 .
+  sh:ignoredProperties _:node1g8tmdfl9x9241 .
 
-_:node1g5oj6hp8x7485 rdf:first rdf:type;
+_:node1g8tmdfl9x9241 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 foaf:OnlineAccount sh:nodeKind sh:IRI;
@@ -208,9 +221,9 @@ foaf:OnlineAccount sh:nodeKind sh:IRI;
 skos:Concept a rdfs:Class, sh:NodeShape;
   rdfs:label "Concept"@en;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7486 .
+  sh:ignoredProperties _:node1g8tmdfl9x9242 .
 
-_:node1g5oj6hp8x7486 rdf:first rdf:type;
+_:node1g8tmdfl9x9242 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 skos:Concept sh:nodeKind sh:IRI;
@@ -220,9 +233,9 @@ skos:Concept sh:nodeKind sh:IRI;
 rdfs:Resource a rdfs:Class, sh:NodeShape;
   rdfs:label "Resource"@en;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7487 .
+  sh:ignoredProperties _:node1g8tmdfl9x9243 .
 
-_:node1g5oj6hp8x7487 rdf:first rdf:type;
+_:node1g8tmdfl9x9243 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 rdfs:Resource sh:nodeKind sh:IRI;
@@ -231,9 +244,9 @@ rdfs:Resource sh:nodeKind sh:IRI;
 foaf:Document a rdfs:Class, sh:NodeShape;
   rdfs:label "Document"@en;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7488 .
+  sh:ignoredProperties _:node1g8tmdfl9x9244 .
 
-_:node1g5oj6hp8x7488 rdf:first rdf:type;
+_:node1g8tmdfl9x9244 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 foaf:Document sh:nodeKind sh:IRI;
@@ -244,9 +257,9 @@ foaf:Image a rdfs:Class, sh:NodeShape;
   rdfs:label "Image"@en;
   skos:example <https://www.europarl.europa.eu/mepphoto/124936.jpg>;
   sh:closed true;
-  sh:ignoredProperties _:node1g5oj6hp8x7489 .
+  sh:ignoredProperties _:node1g8tmdfl9x9245 .
 
-_:node1g5oj6hp8x7489 rdf:first rdf:type;
+_:node1g8tmdfl9x9245 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 foaf:Image sh:nodeKind sh:IRI;
@@ -257,9 +270,9 @@ org:Site a rdfs:Class, sh:NodeShape;
   rdfs:comment "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."@en;
   rdfs:label "Site"@en;
   skos:example <http://publications.europa.eu/resource/authority/site/ASP>;
-  sh:ignoredProperties _:node1g5oj6hp8x7490 .
+  sh:ignoredProperties _:node1g8tmdfl9x9246 .
 
-_:node1g5oj6hp8x7490 rdf:first rdf:type;
+_:node1g8tmdfl9x9246 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 org:Site sh:nodeKind sh:IRI;
@@ -271,9 +284,9 @@ org:Role a rdfs:Class, sh:NodeShape;
   rdfs:comment "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of `org:Membership`. It is common for roles to be arranged in some taxonomic structure and we use SKOS to represent that. The normal SKOS lexical properties should be used when labelling the Role."@en;
   rdfs:label "Role"@en;
   skos:example <http://publications.europa.eu/resource/authority/role/MEMBER_EP>;
-  sh:ignoredProperties _:node1g5oj6hp8x7491 .
+  sh:ignoredProperties _:node1g8tmdfl9x9247 .
 
-_:node1g5oj6hp8x7491 rdf:first rdf:type;
+_:node1g8tmdfl9x9247 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 org:Role sh:nodeKind sh:IRI;
@@ -284,9 +297,9 @@ org:Role sh:nodeKind sh:IRI;
 euvoc:HonorificTitle a rdfs:Class, sh:NodeShape;
   rdfs:label "Honorific title"@en;
   skos:example <http://publications.europa.eu/resource/authority/honorific/MR>;
-  sh:ignoredProperties _:node1g5oj6hp8x7492 .
+  sh:ignoredProperties _:node1g8tmdfl9x9248 .
 
-_:node1g5oj6hp8x7492 rdf:first rdf:type;
+_:node1g8tmdfl9x9248 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 euvoc:HonorificTitle sh:nodeKind sh:IRI;
@@ -297,9 +310,9 @@ euvoc:HonorificTitle sh:nodeKind sh:IRI;
 euvoc:Country a rdfs:Class, sh:NodeShape;
   rdfs:label "Country"@en;
   skos:example <http://publications.europa.eu/resource/authority/country/BEL>;
-  sh:ignoredProperties _:node1g5oj6hp8x7493 .
+  sh:ignoredProperties _:node1g8tmdfl9x9249 .
 
-_:node1g5oj6hp8x7493 rdf:first rdf:type;
+_:node1g8tmdfl9x9249 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 euvoc:Country sh:nodeKind sh:IRI;
@@ -310,9 +323,9 @@ euvoc:Country sh:nodeKind sh:IRI;
 vcard:Gender a rdfs:Class, sh:NodeShape;
   rdfs:label "Gender"@en;
   skos:example <http://publications.europa.eu/resource/authority/human-sex/FEMALE>;
-  sh:ignoredProperties _:node1g5oj6hp8x7494 .
+  sh:ignoredProperties _:node1g8tmdfl9x9250 .
 
-_:node1g5oj6hp8x7494 rdf:first rdf:type;
+_:node1g8tmdfl9x9250 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 vcard:Gender sh:nodeKind sh:IRI;
@@ -323,9 +336,9 @@ vcard:Gender sh:nodeKind sh:IRI;
 euvoc:CorporateBodyClassification a rdfs:Class, sh:NodeShape;
   rdfs:label "Corporate body classification"@en;
   skos:example <http://publications.europa.eu/resource/authority/corporate-body-classification/EP_GROUP>;
-  sh:ignoredProperties _:node1g5oj6hp8x7495 .
+  sh:ignoredProperties _:node1g8tmdfl9x9251 .
 
-_:node1g5oj6hp8x7495 rdf:first rdf:type;
+_:node1g8tmdfl9x9251 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 euvoc:CorporateBodyClassification sh:nodeKind sh:IRI;
@@ -336,9 +349,9 @@ euvoc:CorporateBodyClassification sh:nodeKind sh:IRI;
 euvoc:AddressType a rdfs:Class, sh:NodeShape;
   rdfs:label "Address type"@en;
   skos:example <http://publications.europa.eu/resource/authority/address-type/TWT>;
-  sh:ignoredProperties _:node1g5oj6hp8x7496 .
+  sh:ignoredProperties _:node1g8tmdfl9x9252 .
 
-_:node1g5oj6hp8x7496 rdf:first rdf:type;
+_:node1g8tmdfl9x9252 rdf:first rdf:type;
   rdf:rest rdf:nil .
 
 euvoc:AddressType sh:nodeKind sh:IRI;
@@ -364,7 +377,6 @@ org-ep:P10 a skos:Concept;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:datatype epvoc:codictBodyId;
   sh:description "A notation is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en;
-  sh:minCount 1;
   sh:name "Notation"@en;
   sh:nodeKind sh:Literal;
   sh:path skos:notation .
@@ -375,7 +387,6 @@ org-ep:P11 a skos:Concept;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:datatype xsd:string;
   sh:description "The property may be used to provide a human-readable version of a resource's name."@en;
-  sh:minCount 1;
   sh:name "Label"@en;
   sh:nodeKind sh:Literal;
   sh:path rdfs:label .
@@ -386,7 +397,6 @@ org-ep:P12 a skos:Concept;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:datatype rdf:langString;
   sh:description "A preferred lexical label for a given resource."@en;
-  sh:minCount 1;
   sh:name "Preferred label"@en;
   sh:nodeKind sh:Literal;
   sh:path skos:prefLabel .
@@ -408,10 +418,9 @@ org-ep:P14 a skos:Concept;
   sh:datatype xsd:string;
   sh:description "A related source from which the described resource is derived."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Source"@en;
   sh:nodeKind sh:Literal;
-  sh:path dct:source .
+  sh:path dcterms:source .
 
 org-ep:P15 a skos:Concept;
   owl:versionInfo "v0.3";
@@ -439,7 +448,6 @@ org-ep:P17 a skos:Concept;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:class euvoc:CorporateBodyClassification;
   sh:description "Indicates a classification for this Organization within some classification scheme. Extension vocabularies may wish to specialize this property to have a range corresponding to a specific `skos:ConceptScheme`. This property is under discussion and may be revised or removed - in many cases organizations are best categorized by defining a sub-class hierarchy in an extension vocabulary."@en;
-  sh:minCount 1;
   sh:name "Classification"@en;
   sh:nodeKind sh:IRI;
   sh:path org:classification .
@@ -457,12 +465,12 @@ org-ep:P19 a skos:Concept;
   owl:versionInfo "v0.3";
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
+  sh:class dcterms:PeriodOfTime;
   sh:description "Temporal characteristics of the resource."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Temporal"@en;
-  sh:nodeKind sh:BlankNodeOrIRI;
-  sh:path dct:temporal .
+  sh:nodeKind sh:IRI;
+  sh:path dcterms:temporal .
 
 org-ep:P22 a skos:Concept;
   owl:versionInfo "v0.3";
@@ -482,7 +490,6 @@ org-ep:P23 a skos:Concept;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:datatype epvoc:codictPersonId;
   sh:description "A notation is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en;
-  sh:minCount 1;
   sh:name "Notation"@en;
   sh:nodeKind sh:Literal;
   sh:path skos:notation .
@@ -493,7 +500,6 @@ org-ep:P24 a skos:Concept;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:datatype xsd:string;
   sh:description "The property may be used to provide a human-readable version of a resource's name."@en;
-  sh:minCount 1;
   sh:name "Label"@en;
   sh:nodeKind sh:Literal;
   sh:path rdfs:label .
@@ -505,7 +511,6 @@ org-ep:P25 a skos:Concept;
   sh:datatype xsd:string;
   sh:description "The given name of some person."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Given name"@en;
   sh:nodeKind sh:Literal;
   sh:path foaf:givenName .
@@ -517,7 +522,6 @@ org-ep:P26 a skos:Concept;
   sh:datatype xsd:string;
   sh:description "The family name of some person."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Family name"@en;
   sh:nodeKind sh:Literal;
   sh:path foaf:familyName .
@@ -719,22 +723,21 @@ org-ep:P47 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "A notation is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en;
-  sh:minCount 1;
   sh:name "Notation"@en;
   sh:nodeKind sh:Literal;
-  sh:or _:node1g5oj6hp8x7499 .
+  sh:or _:node1g8tmdfl9x9255 .
 
-_:node1g5oj6hp8x7499 rdf:first _:node1g5oj6hp8x7500 .
+_:node1g8tmdfl9x9255 rdf:first _:node1g8tmdfl9x9256 .
 
-_:node1g5oj6hp8x7500 sh:datatype epvoc:codictFunctionId .
+_:node1g8tmdfl9x9256 sh:datatype epvoc:codictFunctionId .
 
-_:node1g5oj6hp8x7499 rdf:rest _:node1g5oj6hp8x7501 .
+_:node1g8tmdfl9x9255 rdf:rest _:node1g8tmdfl9x9257 .
 
-_:node1g5oj6hp8x7501 rdf:first _:node1g5oj6hp8x7502 .
+_:node1g8tmdfl9x9257 rdf:first _:node1g8tmdfl9x9258 .
 
-_:node1g5oj6hp8x7502 sh:datatype epvoc:codictMandateId .
+_:node1g8tmdfl9x9258 sh:datatype epvoc:codictMandateId .
 
-_:node1g5oj6hp8x7501 rdf:rest rdf:nil .
+_:node1g8tmdfl9x9257 rdf:rest rdf:nil .
 
 org-ep:P47 sh:path skos:notation .
 
@@ -742,11 +745,11 @@ org-ep:P48 a skos:Concept;
   owl:versionInfo "v0.1";
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
+  sh:class dcterms:PeriodOfTime;
   sh:description "property to indicate the interval for which the membership is/was valid."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Member during"@en;
-  sh:nodeKind sh:BlankNode;
+  sh:nodeKind sh:IRI;
   sh:path org:memberDuring .
 
 org-ep:P49 a skos:Concept;
@@ -766,7 +769,6 @@ org-ep:P50 a skos:Concept;
   sh:class org:Role;
   sh:description "Indicates the Role that the Agent plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Role"@en;
   sh:nodeKind sh:IRI;
   sh:path org:role .
@@ -778,7 +780,6 @@ org-ep:P51 a skos:Concept;
   sh:class org:Organization;
   sh:description "Indicates the organization in which the Agent is a member."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Organization"@en;
   sh:nodeKind sh:IRI;
   sh:path org:organization .
@@ -797,9 +798,10 @@ org-ep:P53 a skos:Concept;
   owl:versionInfo "v0.3";
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
+  sh:class epvoc:ContactPoint;
   sh:description "A contact point for a person, an organisation"@en;
   sh:name "Contact point"@en;
-  sh:nodeKind sh:BlankNode;
+  sh:nodeKind sh:IRI;
   sh:path dcat:contactPoint .
 
 org-ep:P54 a skos:Concept;
@@ -809,7 +811,6 @@ org-ep:P54 a skos:Concept;
   sh:class euvoc:CorporateBodyClassification;
   sh:description "Indicates a classification for memberships within some classification scheme, depending on implied org:Organization classification."@en;
   sh:maxCount 1;
-  sh:minCount 1;
   sh:name "Membership classification"@en;
   sh:nodeKind sh:IRI;
   sh:path epvoc:membershipClassification .
@@ -865,19 +866,19 @@ org-ep:P63 a skos:Concept;
   sh:description "To specify the telephone number for telephony communication with the object"@en;
   sh:name "Has telephone"@en;
   sh:nodeKind sh:IRI;
-  sh:or _:node1g5oj6hp8x7503 .
+  sh:or _:node1g8tmdfl9x9259 .
 
-_:node1g5oj6hp8x7503 rdf:first _:node1g5oj6hp8x7504 .
+_:node1g8tmdfl9x9259 rdf:first _:node1g8tmdfl9x9260 .
 
-_:node1g5oj6hp8x7504 sh:node vcard:Voice .
+_:node1g8tmdfl9x9260 sh:node vcard:Voice .
 
-_:node1g5oj6hp8x7503 rdf:rest _:node1g5oj6hp8x7505 .
+_:node1g8tmdfl9x9259 rdf:rest _:node1g8tmdfl9x9261 .
 
-_:node1g5oj6hp8x7505 rdf:first _:node1g5oj6hp8x7506 .
+_:node1g8tmdfl9x9261 rdf:first _:node1g8tmdfl9x9262 .
 
-_:node1g5oj6hp8x7506 sh:node vcard:Fax .
+_:node1g8tmdfl9x9262 sh:node vcard:Fax .
 
-_:node1g5oj6hp8x7505 rdf:rest rdf:nil .
+_:node1g8tmdfl9x9261 rdf:rest rdf:nil .
 
 org-ep:P63 sh:path vcard:hasTelephone .
 
@@ -932,7 +933,7 @@ org-ep:P78 a skos:Concept;
   sh:maxCount 1;
   sh:name "Type"@en;
   sh:nodeKind sh:IRI;
-  sh:path dct:type .
+  sh:path dcterms:type .
 
 org-ep:P81 a skos:Concept;
   owl:versionInfo "v0.1";
@@ -949,7 +950,6 @@ org-ep:P84 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:country;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .
@@ -969,7 +969,6 @@ org-ep:P88 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:corporate-body-classification;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .
@@ -988,7 +987,6 @@ org-ep:P92 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:role;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .
@@ -1008,7 +1006,6 @@ org-ep:P96 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:site;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .
@@ -1028,7 +1025,6 @@ org-ep:P100 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:human-sex;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .
@@ -1048,7 +1044,6 @@ org-ep:P104 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:address-type;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .
@@ -1068,7 +1063,6 @@ org-ep:P108 a skos:Concept;
   skos:inScheme <https://data.europarl.europa.eu/def/org-ep#>;
   skos:topConceptOf <https://data.europarl.europa.eu/def/org-ep#>;
   sh:description "Property stating the concept scheme that a given resource is part of"@en;
-  sh:hasValue op-aut:honorific-title;
   sh:name "Is in scheme"@en;
   sh:nodeKind sh:IRI;
   sh:path skos:inScheme .

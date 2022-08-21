@@ -1,5 +1,9 @@
+
 <html lang="en">
    <head>
+   
+<title>ORG-EP Application profile</title>   
+   
       <style type="text/css">
 					.anchor {
 						float: left;
@@ -147,12 +151,20 @@
 					
 					
 				</style>
+
+<style type="text/css">
+.container {width:calc(100% - 500px);}
+.toc {position:fixed;top:0;left:0;font-size:small;padding:10px 20px;width:170px;border-right:solid 2px #eeeeee;bottom:0;}
+figcaption {text-align:center;}
+</style>
+
    </head>
    <body>
       <div class="container">
          <br/>
          <table style="width:100%">
             <tr>
+<!--
                <td width="20%">
                   <img src="https://www.europarl.europa.eu/portal/img/ep-logo.svg"/>
                </td>
@@ -163,15 +175,30 @@
                      </center>
                   </div>
                </td>
+-->
+
+               <td width="75%">
+                  <div>
+                     <center>
+                        <h1>ORG-EP Application Profile</h1>
+                     </center>
+                  </div>
+               </td>
+               <td width="15%">
+                  <img src="https://www.europarl.europa.eu/portal/img/ep-logo.svg"/>
+               </td>
+
             </tr>
          </table>
          <br/>
          <br/>
+<!--
          <b>Created date: </b>2021-11-11<br/>
-         <b>Last updated: </b>2022-07-01T00:00:00.000Z<br/>
+         <b>Issued date: </b>2022-08-19<br/>
+         <b>Last updated: </b>2022-08-17<br/>
          <b>Version: </b>0.3.1<br/>
          <b>License: </b>
-         <a href="https://www.europarl.europa.eu/legal-notice/en/" target="_blank">https://www.europarl.europa.eu/legal-notice/en/</a>
+         <a href="https://www.europarl.europa.eu/legal-notice/" target="_blank">https://www.europarl.europa.eu/legal-notice/</a>
          <br/>
          <b>Creator: </b>
          <a href="http://publications.europa.eu/resource/dataset/corporate-body/EP"
@@ -182,12 +209,39 @@
             target="_blank">http://publications.europa.eu/resource/dataset/corporate-body/EP</a>
          <br/>
          <br/>
+-->
+
+<b>Creation date: </b>2021-11-11<br/>
+<b>Issue date: </b>2022-08-19<br/>
+<b>Last updated: </b>2022-08-17<br/>
+<b>Version: </b>0.3.1<br/>
+<b>Status: </b>Under development<br/>
+<b>Creator: </b><a href="https://www.europarl.europa.eu/" target="_blank">European Parliament</a><br/>
+<b>Publisher: </b><a href="https://www.europarl.europa.eu/" target="_blank">European Parliament</a><br/>
+<b>Feedback: </b><a href="https://github.com/europarl/org-ep/" target="_blank">https://github.com/europarl/org-ep/</a><br/>
+
+<p>Available serialisations: <a href="./org-ep.shacl.ttl">SHACL (Turtle)</a></p>
+
+<p>Copyright &copy; 2021 <a href="https://europa.eu/" target="_blank">European Union</a>. This document is distributed under the terms and conditions described in the <a href="https://www.europarl.europa.eu/legal-notice/" target="_blank">European Parliament Legal Notice</a>.</p>
+		 
          <hr/>
          <br/>
+<!--		 
          <div>
             <h2>Table of Content</h2>
+-->
+
+         <div class="toc">
+            <h2>Table of Contents</h2>
+
+<!--
             <a href="#diagram">Dataset diagram</a>
             <br/>
+-->
+
+            <a href="#diagram">Diagram</a>
+            <br/>
+
             <a href="#description">Description </a>
             <br/>
             <a href="#prefixes">Namespaces</a>
@@ -220,7 +274,7 @@
             <br/>
             <a href="#eli-dl:ParliamentaryTerm">Parliamentary term</a>
             <br/>
-            <a href="#dct:PeriodOfTime">Period of time</a>
+            <a href="#dcterms:PeriodOfTime">Period of time</a>
             <br/>
             <a href="#foaf:Person">Person</a>
             <br/>
@@ -234,13 +288,29 @@
             <br/>
          </div>
          <br/>
+
+<div>
+<h2>Abstract</h2>
+<p>ORG-EP is an application profile of the W3C Organization Ontology, specifically designed to describe the organisational components of the European Parliament (MEPs, Parliamentary Groups, Committees, etc.).</p>
+</div>
+
+<div>
+<h2>Usage note</h2>
+This version of ORG-EP is a draft specification and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+</div>
+
          <div id="diagram">
+<!--
             <h2>Dataset diagram</h2>
-            <div><?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="743px" preserveAspectRatio="none" style="width:2657px;height:743px;" version="1.1" viewBox="0 0 2657 743" width="2657px" zoomAndPan="magnify"><defs><filter height="300%" id="fa70sj7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class dct:PeriodOfTime--><a target="_top" xlink:actuate="onRequest" xlink:href="#dct:PeriodOfTime" xlink:show="new" xlink:title="#dct:PeriodOfTime" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="224" x="200" y="91"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="120" x="252" y="108.9951">dct:PeriodOfTime</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="201" x2="423" y1="117.2969" y2="117.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="206" x="206" y="131.5073">dcat:endDate  : xsd:dateTime  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="212" x="206" y="144.312">dcat:startDate  : xsd:dateTime  [1..1]</text></a><!--class eli-dl:ParliamentaryTerm--><a target="_top" xlink:actuate="onRequest" xlink:href="#eli-dl:ParliamentaryTerm" xlink:show="new" xlink:title="#eli-dl:ParliamentaryTerm" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="123.9297" style="stroke: #A80036; stroke-width: 1.5;" width="250" x="6" y="474"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="165" x="48.5" y="491.9951">eli-dl:ParliamentaryTerm</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="255" y1="500.2969" y2="500.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="178" x="12" y="514.5073">dc:identifier  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="171" x="12" y="527.312">dct:source  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="110" x="12" y="540.1167">dct:temporal  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="164" x="12" y="552.9214">rdfs:label  : xsd:string  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="169" x="12" y="565.7261">skos:altLabel  : rdf:langString</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="238" x="12" y="578.5308">skos:notation  : epvoc:codictBodyId  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="215" x="12" y="591.3354">skos:prefLabel  : rdf:langString  [1..*]</text></a><!--class euvoc:CorporateBodyClassification--><a target="_top" xlink:actuate="onRequest" xlink:href="#euvoc:CorporateBodyClassification" xlink:show="new" xlink:title="#euvoc:CorporateBodyClassification" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="324" x="435" y="675"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="240" x="477" y="692.9951">euvoc:CorporateBodyClassification</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="436" x2="758" y1="701.2969" y2="701.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="441" y="715.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="312" x="441" y="728.312">skos:inScheme  = op-aut:corporate-body-classification</text></a><!--class epvoc:ContactPoint--><a target="_top" xlink:actuate="onRequest" xlink:href="#epvoc:ContactPoint" xlink:show="new" xlink:title="#epvoc:ContactPoint" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="47.1016" style="stroke: #A80036; stroke-width: 1.5;" width="238" x="2288" y="97.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="136" x="2339" y="115.4951">epvoc:ContactPoint</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2289" x2="2525" y1="123.7969" y2="123.7969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="226" x="2294" y="138.0073">euvoc:officeAddress  : xsd:string  [0..1]</text></a><!--class org:Site--><a target="_top" xlink:actuate="onRequest" xlink:href="#org:Site" xlink:show="new" xlink:title="#org:Site" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="181" x="2229.5" y="324"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="54" x="2293" y="341.9951">org:Site</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2230.5" x2="2409.5" y1="350.2969" y2="350.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="2235.5" y="364.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="169" x="2235.5" y="377.312">skos:inScheme  = op-aut:site</text></a><polygon fill="#FEFECE" filter="url(#fa70sj7)" points="2494,342,2506,354,2494,366,2482,354,2494,342" style="stroke: #A80036; stroke-width: 1.5;"/><!--class vcard:Voice--><a target="_top" xlink:actuate="onRequest" xlink:href="#vcard:Voice" xlink:show="new" xlink:title="#vcard:Voice" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="47.1016" style="stroke: #A80036; stroke-width: 1.5;" width="137" x="2339.5" y="512.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="80" x="2368" y="530.4951">vcard:Voice</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2340.5" x2="2475.5" y1="538.7969" y2="538.7969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="125" x="2345.5" y="553.0073">vcard:hasValue  [1..1]</text></a><!--class vcard:Fax--><a target="_top" xlink:actuate="onRequest" xlink:href="#vcard:Fax" xlink:show="new" xlink:title="#vcard:Fax" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="47.1016" style="stroke: #A80036; stroke-width: 1.5;" width="137" x="2511.5" y="512.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="2547.5" y="530.4951">vcard:Fax</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2512.5" x2="2647.5" y1="538.7969" y2="538.7969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="125" x="2517.5" y="553.0073">vcard:hasValue  [1..1]</text></a><!--class euvoc:AddressType--><a target="_top" xlink:actuate="onRequest" xlink:href="#euvoc:AddressType" xlink:show="new" xlink:title="#euvoc:AddressType" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="235" x="291.5" y="506"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="138" x="340" y="523.9951">euvoc:AddressType</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="292.5" x2="525.5" y1="532.2969" y2="532.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="297.5" y="546.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="223" x="297.5" y="559.312">skos:inScheme  = op-aut:address-type</text></a><!--class euvoc:Country--><a target="_top" xlink:actuate="onRequest" xlink:href="#euvoc:Country" xlink:show="new" xlink:title="#euvoc:Country" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="202" x="1609" y="675"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="1659.5" y="692.9951">euvoc:Country</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1610" x2="1810" y1="701.2969" y2="701.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="1615" y="715.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="190" x="1615" y="728.312">skos:inScheme  = op-aut:country</text></a><!--class euvoc:HonorificTitle--><a target="_top" xlink:actuate="onRequest" xlink:href="#euvoc:HonorificTitle" xlink:show="new" xlink:title="#euvoc:HonorificTitle" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="234" x="814" y="324"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="136" x="863" y="341.9951">euvoc:HonorificTitle</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="815" x2="1047" y1="350.2969" y2="350.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="820" y="364.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="222" x="820" y="377.312">skos:inScheme  = op-aut:honorific-title</text></a><!--class foaf:Document--><a target="_top" xlink:actuate="onRequest" xlink:href="#foaf:Document" xlink:show="new" xlink:title="#foaf:Document" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="47.1016" style="stroke: #A80036; stroke-width: 1.5;" width="109" x="1083.5" y="330.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="103" x="1086.5" y="348.4951">foaf:Document</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1084.5" x2="1191.5" y1="356.7969" y2="356.7969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="1089.5" y="371.0073">rdf:type  [0..1]</text></a><!--class foaf:Image--><a target="_top" xlink:actuate="onRequest" xlink:href="#foaf:Image" xlink:show="new" xlink:title="#foaf:Image" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="47.1016" style="stroke: #A80036; stroke-width: 1.5;" width="94" x="1229" y="330.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="1240" y="348.4951">foaf:Image</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1230" x2="1322" y1="356.7969" y2="356.7969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="1235" y="371.0073">rdf:type  [0..1]</text></a><!--class foaf:OnlineAccount--><a target="_top" xlink:actuate="onRequest" xlink:href="#foaf:OnlineAccount" xlink:show="new" xlink:title="#foaf:OnlineAccount" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="26.2969" style="stroke: #A80036; stroke-width: 1.5;" width="137" x="442.5" y="341"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="131" x="445.5" y="358.9951">foaf:OnlineAccount</text></a><!--class foaf:Person--><a target="_top" xlink:actuate="onRequest" xlink:href="#foaf:Person" xlink:show="new" xlink:title="#foaf:Person" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="226.3672" style="stroke: #A80036; stroke-width: 1.5;" width="301" x="1126.5" y="8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="1237.5" y="25.9951">foaf:Person</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1127.5" x2="1426.5" y1="34.2969" y2="34.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="178" x="1132.5" y="48.5073">dc:identifier  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="226" x="1132.5" y="61.312">epvoc:deathDate  : xsd:dateTime  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="250" x="1132.5" y="74.1167">epvoc:upperFamilyName  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="246" x="1132.5" y="86.9214">epvoc:upperGivenName  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="289" x="1132.5" y="99.7261">epvoc:upperOfficialFamilyName  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="285" x="1132.5" y="112.5308">epvoc:upperOfficialGivenName  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="254" x="1132.5" y="125.3354">euvoc:officialFamilyName  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="250" x="1132.5" y="138.1401">euvoc:officialGivenName  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="204" x="1132.5" y="150.9448">foaf:familyName  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="200" x="1132.5" y="163.7495">foaf:givenName  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="225" x="1132.5" y="176.5542">person:placeOfBirth  : xsd:string  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="164" x="1132.5" y="189.3589">rdfs:label  : xsd:string  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="250" x="1132.5" y="202.1636">skos:notation  : epvoc:codictPersonId  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="193" x="1132.5" y="214.9683">vcard:bday  : xsd:dateTime  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="87" x="1132.5" y="227.7729">vcard:hasEmail</text></a><!--class org:Membership--><a target="_top" xlink:actuate="onRequest" xlink:href="#org:Membership" xlink:show="new" xlink:title="#org:Membership" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="85.5156" style="stroke: #A80036; stroke-width: 1.5;" width="190" x="1358" y="311"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="114" x="1396" y="328.9951">org:Membership</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1359" x2="1547" y1="337.2969" y2="337.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="178" x="1364" y="351.5073">dc:identifier  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="1364" y="364.312">dcat:contactPoint</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="146" x="1364" y="377.1167">org:memberDuring  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="1364" y="389.9214">skos:notation  [1..*]</text></a><!--class vcard:Gender--><a target="_top" xlink:actuate="onRequest" xlink:href="#vcard:Gender" xlink:show="new" xlink:title="#vcard:Gender" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="223" x="1971.5" y="324"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="94" x="2036" y="341.9951">vcard:Gender</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1972.5" x2="2193.5" y1="350.2969" y2="350.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="1977.5" y="364.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="211" x="1977.5" y="377.312">skos:inScheme  = op-aut:human-sex</text></a><!--class org:Organization--><a target="_top" xlink:actuate="onRequest" xlink:href="#org:Organization" xlink:show="new" xlink:title="#org:Organization" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="123.9297" style="stroke: #A80036; stroke-width: 1.5;" width="250" x="882" y="474"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="115" x="949.5" y="491.9951">org:Organization</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="883" x2="1131" y1="500.2969" y2="500.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="178" x="888" y="514.5073">dc:identifier  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="171" x="888" y="527.312">dct:source  : xsd:string  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="110" x="888" y="540.1167">dct:temporal  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="164" x="888" y="552.9214">rdfs:label  : xsd:string  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="169" x="888" y="565.7261">skos:altLabel  : rdf:langString</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="238" x="888" y="578.5308">skos:notation  : epvoc:codictBodyId  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="215" x="888" y="591.3354">skos:prefLabel  : rdf:langString  [1..*]</text></a><!--class org:Role--><a target="_top" xlink:actuate="onRequest" xlink:href="#org:Role" xlink:show="new" xlink:title="#org:Role" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="59.9063" style="stroke: #A80036; stroke-width: 1.5;" width="182" x="1458" y="506"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="1519.5" y="523.9951">org:Role</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1459" x2="1639" y1="532.2969" y2="532.2969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="1464" y="546.5073">rdf:type  = skos:Concept</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="170" x="1464" y="559.312">skos:inScheme  = op-aut:role</text></a><!--class rdfs:Resource--><a target="_top" xlink:actuate="onRequest" xlink:href="#rdfs:Resource" xlink:show="new" xlink:title="#rdfs:Resource" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="26.2969" style="stroke: #A80036; stroke-width: 1.5;" width="104" x="459" y="108"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="462" y="125.9951">rdfs:Resource</text></a><!--class skos:Concept--><a target="_top" xlink:actuate="onRequest" xlink:href="#skos:Concept" xlink:show="new" xlink:title="#skos:Concept" xlink:type="simple"><rect fill="#FEFECE" filter="url(#fa70sj7)" height="47.1016" style="stroke: #A80036; stroke-width: 1.5;" width="190" x="217" y="330.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="97" x="263.5" y="348.4951">skos:Concept</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="218" x2="406" y1="356.7969" y2="356.7969"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="178" x="223" y="371.0073">skos:prefLabel  : rdf:langString</text></a><path d="M256.2939,591.075 C262.261,593.461 268.1852,595.7814 274,598 C346.6177,625.7071 429.9112,653.1977 493.7248,673.3757 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="498.672,674.9377,491.2941,668.4133,493.9041,673.4321,488.8853,676.0421,498.672,674.9377" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="408" y="641.0669">org:classification  [1..*]</text><path d="M2386.0541,144.7328 C2363.926,171.5329 2330.4163,217.4953 2317,264 C2311.9339,281.5606 2312.1204,301.8514 2313.8187,318.7168 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="2314.3902,323.834,2317.3665,314.4456,2313.8352,318.8649,2309.4159,315.3336,2314.3902,323.834" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="132" x="2318" y="277.0669">epvoc:hasSite  [0..1]</text><path d="M2415.8208,144.6235 C2433.8463,192.8987 2474.4162,301.5515 2488.8123,340.1065 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="2490.5887,344.8639,2491.1878,335.0333,2488.8397,340.1798,2483.6932,337.8317,2490.5887,344.8639" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="128" x="2467" y="277.0669">vcard:hasTelephone</text><path d="M2490.0813,362.2931 C2477.6275,388.6488 2438.635,471.1679 2419.2175,512.2607 " fill="none" style="stroke: #800000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><path d="M2497.9187,362.2931 C2510.3725,388.6488 2549.365,471.1679 2568.7825,512.2607 " fill="none" style="stroke: #800000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><path d="M503.6644,367.089 C488.1257,394.815 451.4475,460.2603 428.5791,501.0647 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="425.8611,505.9145,433.7506,500.0191,428.3056,501.5528,426.7719,496.1079,425.8611,505.9145" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="471" y="440.0669">dct:type  [0..1]</text><path d="M1126.1203,166.8942 C950.4666,220.3241 670.2273,305.5666 558.8761,339.4372 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="554.0228,340.9134,563.7973,342.1211,558.8064,339.4583,561.4692,334.4673,554.0228,340.9134" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="79" x="804" y="277.0669">foaf:account</text><path d="M1187.6965,234.1076 C1181.3432,243.9872 1175.3463,254.0248 1170,264 C1159.5456,283.506 1151.2949,307.1329 1145.7912,325.2834 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1144.3122,330.2496,1150.7147,322.7657,1145.7393,325.4576,1143.0475,320.4823,1144.3122,330.2496" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="97" x="1171" y="277.0669">foaf:homepage</text><path d="M1276.5146,234.0873 C1276.3694,267.9349 1276.2225,302.1669 1276.123,325.3417 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1276.1013,330.4052,1280.1401,321.4225,1276.1229,325.4052,1272.1402,321.388,1276.1013,330.4052" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="1278" y="277.0669">foaf:img  [0..1]</text><path d="M1362.4222,234.0873 C1381.7998,259.7407 1401.3443,285.6149 1417.2929,306.7286 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1420.4335,310.8864,1418.2006,301.294,1417.4198,306.8967,1411.8171,306.1159,1420.4335,310.8864" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="127" x="1398" y="277.0669">org:hasMembership</text><path d="M1427.6503,164.2562 C1568.3129,213.6789 1769.5776,309.7536 1859,474 C1885.3522,522.4024 1884.1557,548.9651 1859,598 C1842.5121,630.1391 1811.3861,654.8032 1781.8293,672.3072 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1777.4818,674.8379,1787.2723,673.7673,1781.803,672.3226,1783.2478,666.8533,1777.4818,674.8379" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="115" x="1839" y="440.0669">person:citizenship</text><path d="M1427.6908,137.4387 C1566.0109,156.1812 1774.5575,193.7748 1944,264 C1978.7892,278.4183 2014.3696,301.6455 2040.8228,320.8917 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="2044.9885,323.9444,2040.0933,315.3983,2040.9554,320.989,2035.3647,321.8512,2044.9885,323.9444" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="151" x="1978" y="277.0669">vcard:hasGender  [0..1]</text><path d="M1126.4797,183.618 C1083.1907,205.4947 1037.5671,232.573 1000,264 C981.3452,279.6057 964.6274,301.1069 952.3209,319.1802 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="949.2887,323.6956,957.627,318.4541,952.0763,319.5448,950.9856,313.994,949.2887,323.6956" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="153" x="1001" y="277.0669">vcard:hasHonorificPrefix</text><path d="M1357.6994,392.3301 C1351.7603,394.0742 1345.8288,395.6537 1340,397 C1268.0377,413.6219 1059.3102,372.9283 1009,427 C998.5172,438.2666 994.4916,453.372 993.8788,468.7411 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="993.7975,473.9582,997.9377,465.0218,993.8756,468.9588,989.9386,464.8968,993.7975,473.9582" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="303" x="1010" y="440.0669">epvoc:memberDuringParliamentaryTerm  [0..1]</text><path d="M1396.4509,397.2189 C1373.0978,413.5691 1345.1698,431.2816 1318,444 C1260.9497,470.7057 1194.3691,491.6399 1137.4829,506.7469 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1132.3592,508.0988,1142.0819,509.6702,1137.1937,506.8231,1140.0408,501.9349,1132.3592,508.0988" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="146" x="1351" y="440.0669">org:organization  [1..1]</text><path d="M1357.7068,392.3621 C1351.7658,394.0982 1345.8319,395.6672 1340,397 C1181.8396,433.1458 725.7828,356.4167 614,474 C564.1767,526.4087 575.9609,619.1696 587.3854,669.7333 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="588.5587,674.7902,590.421,665.119,587.4286,669.9196,582.628,666.9272,588.5587,674.7902" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="248" x="615" y="540.5669">epvoc:membershipClassification  [1..1]</text><path d="M1548.1485,382.6532 C1590.7166,401.1042 1635.9868,430.0763 1657,474 C1688.033,538.868 1701.3955,622.8248 1706.7511,669.5762 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1707.3352,674.8125,1710.3128,665.4245,1706.7809,669.8433,1702.3621,666.3114,1707.3352,674.8125" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="153" x="1697" y="540.5669">euvoc:represents  [0..1]</text><path d="M1490.3563,397.2072 C1497.4648,406.6469 1504.4164,416.8583 1510,427 C1522.8869,450.4069 1532.9069,478.8989 1539.5623,500.8818 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1541.0143,505.7528,1542.2764,495.9851,1539.5859,500.9612,1534.6098,498.2706,1541.0143,505.7528" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="1520" y="440.0669">org:role  [1..1]</text><path d="M1132.277,566.1164 C1266.5061,598.3848 1477.2615,649.0501 1603.6909,679.4435 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1608.8993,680.6956,1601.0836,674.7027,1604.0378,679.5269,1599.2136,682.4811,1608.8993,680.6956" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="111" x="1444" y="641.0669">euvoc:represents</text><path d="M881.7587,587.6239 C814.3017,615.4293 733.1942,648.8614 674.8244,672.9211 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="669.9564,674.9277,679.8016,675.1961,674.5791,673.0223,676.7529,667.7998,669.9564,674.9277" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="779" y="641.0669">org:classification  [1..*]</text><path d="M1132.1086,527.3061 C1152.7711,528.5366 1167,531.4346 1167,536 C1167,540.1731 1155.1116,542.953 1137.2881,544.3397 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1132.1086,544.6939,1141.3605,548.0705,1137.0969,544.3528,1140.8147,540.0892,1132.1086,544.6939" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="154" x="1173" y="540.5669">org:hasSubOrganization</text><path d="M1132.2379,518.7126 C1226.2118,514.2463 1333,520.0088 1333,536 C1333,551.6945 1230.1379,557.5363 1137.4814,553.5254 " fill="none" style="stroke: #800000; stroke-width: 1.0;"/><polygon fill="#800000" points="1132.2379,553.2874,1141.0471,557.6916,1137.2328,553.5143,1141.4101,549.6999,1132.2379,553.2874" style="stroke: #800000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="77" x="1339" y="540.5669">org:linkedTo</text></g></svg></div>
-            <small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/fLZVRzis47xNNy5vRmCSnDkm1s4ha2PD6g2fZSJe7efYeCMJJOGY1OfAu_xrumzBfcHIajCtytJVtSSx7k_ewfdo4ajSe8pXgheLN3tH7u0MVoQ_4CWf1_Jf_kxZUlbuzVdkGr8TrKLH2WvQNUqPeBfWltjVlqjSFa1LuItyIudQeSNbfVVvIahn_Lem8T6l3rWAmPDhunxDIARI5KWgo39Vqm9cA0d8KaGoh5BWv0OhG7hzMf6KwD_cEq9VBoyk5j_G4BPIMAe8Ud507pW1etF2qXMMZE92RndB_HfaORZ5lna_AILQH7CAid5JAKdvrdCoOa8p5RNCuEru1JfJ4hDfcFdydTvn_IAoz5f80rJmNf2zZONUYOuT5TpO5dARPXsfy_3RA2j9yYfbU0CijAjnVFKigXGpzQaneGrgUtpxT30p0Sw5Ed1E4PHckvaWD5Dch_VaB2QbX3nAfRNJ7ARIXLQRoTHAKAxiCGf8RIPCa9-eikVMAUrmPGJ-8G-XjRfDeiXrTk2A4AdByIJSZOc_to6YDoSu-M_rrny3V3mju-Cbmv8OIcjWKExqXP1u6kZY0g6Pq_aYD8rPxEijVfsr4RAy3upN-zBU0G6XYxNIln7wnsL24ywWL2W6i4gKFsKxA2nAb7DSgnGxjRaprYKoM0N9j58P9pfY84OyQs3pZSRD--NOtqdDbTpxh0-2QGnRvJWRgzBt-r5m8GshDLNCosPVFeN5AIP6PjTepfLHFPBA1SxJ6v7LffODcvx0fz4MY8-zBtHRQu67rIXgoPdkfbUP3LABxaczsxTtTErD7hUkUrpb3cHdERa9zL2k_WbWjHlhi45aNPOWRt51sVupBY1wxmoWx-WByBU2b-RMevZz78N6oXke7E_UDxBe63YNW3r6eVEL8Yl5RXtmQvTvd6_imDZbDafpCKBJhpuhs8a2IbrO0vYsyEoA5YFXC9tq0OgDbkresGmmkdKTXM7WoVLNsgzfHfMUb7aGs2gL36UmpDzJgOVWgScVCX_r88CpZLFhJZKzl6l36uBtPzHws_q_59YoSFISpfqUrK5sC4uqdBFOdTyQQJ-jz0n6Nu-NOZ_RII3_4w_6412RPdSSZa9gxQ5RoYtcz4VRorrc2gjwKnjl9wEb7vMWtKb3W-_8OAy3m_e47-svTm89UjwjDDTgYAMhBd-Je_v2iJ8ouSac6NaKxfIOtr8m64vchtBwy_efgoJ8z8p3T0eTV-J5SA77tQdkr7oEOd_YGHYn7CkwUURKcsKdzsSRqRtl6SXQn28uvQ8DuIOyGAEmwG_Fg8cp7fp7YaWwrJ4qQ_jwiVdQLPRlnRrJaywRTSnBenVpKjcdRkF5vkiHNB7CMh5ls13ehgS4hR5qV8rgCzx2QpbVCAi3Vn9r-rnoqlU60j7NZJvfwWBpUGMlVRVkSTrQEYm7IE_qNOKoAZC6xdS1QYT8vHRwJb5xT6WS_mC0"
-                  target="_blank">View as PNG</a>
-            </small>
-            <br/>
+-->
+			
+            <h2>Diagram</h2>
+			
+			<figure id="fig-diagram">
+			  <a title="Click to open the diagram at full size" href="./org-ep.svg" target="_blank"><img alt="Diagram" src="./org-ep.svg" width="100%"/></a>
+			  <figcaption>ORG-EP diagram</figcaption>
+			</figure>
+			
          </div>
          <div id="description">
             <h2>Description </h2>
@@ -273,7 +343,7 @@
                      </td>
                   </tr>
                   <tr>
-                     <td>dct</td>
+                     <td>dcterms</td>
                      <td>
                         <span class="monospace">
                            <a href="http://purl.org/dc/terms/" target="_blank">http://purl.org/dc/terms/</a>
@@ -301,15 +371,6 @@
                      <td>
                         <span class="monospace">
                            <a href="http://xmlns.com/foaf/0.1/" target="_blank">http://xmlns.com/foaf/0.1/</a>
-                        </span>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>op-aut</td>
-                     <td>
-                        <span class="monospace">
-                           <a href="http://publications.europa.eu/resource/authority/"
-                              target="_blank">http://publications.europa.eu/resource/authority/</a>
                         </span>
                      </td>
                   </tr>
@@ -427,7 +488,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>Indicates a classification for this Organization within some classification scheme. Extension vocabularies may wish to specialize this property to have a range corresponding to a specific `skos:ConceptScheme`. This property is under discussion and may be revised or removed - in many cases organizations are best categorized by defining a sub-class hierarchy in an extension vocabulary.</p>
@@ -481,7 +542,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>The property may be used to provide a human-readable version of a resource's name.</p>
@@ -517,7 +578,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>A notation is a string of characters such as "T58.5" or "303.4833" used to uniquely identify a concept within the scope of a given concept scheme.</p>
@@ -535,7 +596,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>A preferred lexical label for a given resource.</p>
@@ -563,7 +624,7 @@
                      <td>Source</td>
                      <td>
                         <code>
-                           <a href="http://purl.org/dc/terms/source">dct:source</a>
+                           <a href="http://purl.org/dc/terms/source">dcterms:source</a>
                         </code>
                      </td>
                      <td>
@@ -571,7 +632,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>A related source from which the described resource is derived.</p>
@@ -581,15 +642,15 @@
                      <td>Temporal</td>
                      <td>
                         <code>
-                           <a href="http://purl.org/dc/terms/temporal">dct:temporal</a>
+                           <a href="http://purl.org/dc/terms/temporal">dcterms:temporal</a>
                         </code>
                      </td>
                      <td>
-                        <code>BlankNodeOrIRI</code>
+                        <a href="#dcterms:PeriodOfTime">Period of time</a>
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>Temporal characteristics of the resource.</p>
@@ -704,7 +765,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>The family name of some person.</p>
@@ -722,7 +783,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>The given name of some person.</p>
@@ -866,7 +927,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>The property may be used to provide a human-readable version of a resource's name.</p>
@@ -884,7 +945,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>A notation is a string of characters such as "T58.5" or "303.4833" used to uniquely identify a concept within the scope of a given concept scheme.</p>
@@ -1050,7 +1111,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>BlankNode</code>
+                        <a href="#epvoc:ContactPoint">Contact point</a>
                         <br/>
                      </td>
                      <td>
@@ -1068,11 +1129,11 @@
                         </code>
                      </td>
                      <td>
-                        <code>BlankNode</code>
+                        <a href="#dcterms:PeriodOfTime">Period of time</a>
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>property to indicate the interval for which the membership is/was valid.</p>
@@ -1108,7 +1169,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>Indicates a classification for memberships within some classification scheme, depending on implied org:Organization classification.</p>
@@ -1144,7 +1205,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>A notation is a string of characters such as "T58.5" or "303.4833" used to uniquely identify a concept within the scope of a given concept scheme.</p>
@@ -1162,7 +1223,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>Indicates the organization in which the Agent is a member.</p>
@@ -1198,7 +1259,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>Indicates the Role that the Agent plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays.</p>
@@ -1294,13 +1355,16 @@
             </table>
          </div>
          <br/>
-         <div id="dct:PeriodOfTime">
+         <div id="dcterms:PeriodOfTime">
             <h2>Period of time</h2>
             <p>
                <em>An interval of time that is named or defined by its start and end dates.</em>
             </p>
             <ul>
                <li>Closed shape</li>
+               <li>Nodes: IRI</li>
+               <li>URI: <span class="monospace">^https://data.europarl.europa.eu/time-period/.*$</span>
+               </li>
                <li>Example: <span class="monospace">https://data.europarl.europa.eu/time-period/pt_9</span>
                </li>
             </ul>
@@ -1362,6 +1426,11 @@
             </p>
             <ul>
                <li>Closed shape</li>
+               <li>Nodes: IRI</li>
+               <li>URI: <span class="monospace">^https://data.europarl.europa.eu/contact-point/.*$</span>
+               </li>
+               <li>Example: <span class="monospace">https://data.europarl.europa.eu/contact-point/58766-m-16341-M05047</span>
+               </li>
             </ul>
             <table class="propertyshapes" style="width:100%">
                <thead>
@@ -1483,7 +1552,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>Indicates a classification for this Organization within some classification scheme. Extension vocabularies may wish to specialize this property to have a range corresponding to a specific `skos:ConceptScheme`. This property is under discussion and may be revised or removed - in many cases organizations are best categorized by defining a sub-class hierarchy in an extension vocabulary.</p>
@@ -1519,7 +1588,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>The property may be used to provide a human-readable version of a resource's name.</p>
@@ -1537,7 +1606,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>A notation is a string of characters such as "T58.5" or "303.4833" used to uniquely identify a concept within the scope of a given concept scheme.</p>
@@ -1555,7 +1624,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..*</div>
+                        <div style="width:30px">0..*</div>
                      </td>
                      <td class="text-break">
                         <p>A preferred lexical label for a given resource.</p>
@@ -1565,7 +1634,7 @@
                      <td>Source</td>
                      <td>
                         <code>
-                           <a href="http://purl.org/dc/terms/source">dct:source</a>
+                           <a href="http://purl.org/dc/terms/source">dcterms:source</a>
                         </code>
                      </td>
                      <td>
@@ -1573,7 +1642,7 @@
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>A related source from which the described resource is derived.</p>
@@ -1583,15 +1652,15 @@
                      <td>Temporal</td>
                      <td>
                         <code>
-                           <a href="http://purl.org/dc/terms/temporal">dct:temporal</a>
+                           <a href="http://purl.org/dc/terms/temporal">dcterms:temporal</a>
                         </code>
                      </td>
                      <td>
-                        <code>BlankNodeOrIRI</code>
+                        <a href="#dcterms:PeriodOfTime">Period of time</a>
                         <br/>
                      </td>
                      <td>
-                        <div style="width:30px">1..1</div>
+                        <div style="width:30px">0..1</div>
                      </td>
                      <td class="text-break">
                         <p>Temporal characteristics of the resource.</p>
@@ -1624,7 +1693,7 @@
                      <td>Type</td>
                      <td>
                         <code>
-                           <a href="http://purl.org/dc/terms/type">dct:type</a>
+                           <a href="http://purl.org/dc/terms/type">dcterms:type</a>
                         </code>
                      </td>
                      <td>
@@ -1800,7 +1869,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:site</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
@@ -1863,7 +1932,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:role</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
@@ -1923,7 +1992,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:honorific-title</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
@@ -1983,7 +2052,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:country</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
@@ -2043,7 +2112,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:human-sex</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
@@ -2103,7 +2172,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:corporate-body-classification</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
@@ -2163,7 +2232,7 @@
                         </code>
                      </td>
                      <td>
-                        <code>op-aut:address-type</code>
+                        <code>IRI</code>
                         <br/>
                      </td>
                      <td>
