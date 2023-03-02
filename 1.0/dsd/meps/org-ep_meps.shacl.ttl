@@ -1,0 +1,1292 @@
+@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix eli-dl: <http://data.europa.eu/eli/eli-draft-legislation-ontology#> .
+@prefix epvoc: <https://data.europarl.europa.eu/def/epvoc#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix meps: <https://data.europarl.europa.eu/def/meps#> .
+@prefix op-aut: <http://publications.europa.eu/resource/authority/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix org-ep: <https://data.europarl.europa.eu/def/org-ep#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.europarl.europa.eu/def/meps#> a owl:Ontology, <http://www.w3.org/ns/adms#Asset>;
+  dcterms:conformsTo <https://www.w3.org/TR/shacl>;
+  dcterms:created "2021-11-18"^^xsd:date;
+  dcterms:creator <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:dateCopyrighted "2022"^^xsd:gYear;
+  dcterms:description "This Dataset Description is a subset of the general ORG-EP application profile and it includes classes and properties used in Meps datasets. Descriptions of classes and properties can be found in ORG-EP application profile."@en;
+  dcterms:license <https://www.europarl.europa.eu/legal-notice/en/>;
+  dcterms:publisher <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:rigthsHolder <http://publications.europa.eu/resource/dataset/corporate-body/EURUN>;
+  dcterms:title "Meps dataset description"@en;
+  dcterms:type <http://publications.europa.eu/resource/authority/dataset-type/APROF>;
+  rdfs:label "Meps dataset description"@en;
+  owl:versionIRI <https://data.europarl.europa.eu/def/meps#>;
+  owl:versionInfo "1.0";
+  adms:status <http://publications.europa.eu/resource/dataset/dataset-status/COMPLETED>;
+  adms:versionNotes """1.0 - 2022-11-18
+- creation"""@en .
+
+meps:Person a sh:NodeShape;
+  rdfs:label "Person"@en;
+  skos:example "https://data.europarl.europa.eu/person/124936";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 1;
+  sh:pattern "^https://data.europarl.europa.eu/person/[0-9]*?$";
+  sh:property meps:P10, meps:P11, meps:P12, meps:P13, meps:P14, meps:P15, meps:P16,
+    meps:P17, meps:P18, meps:P19, meps:P20, meps:P21, meps:P22, meps:P23, meps:P24, meps:P25,
+    meps:P26, meps:P27, meps:P28, meps:P29, meps:P30, meps:P31, meps:P9;
+  sh:target meps:Person-target .
+
+meps:Person-target sh:select """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org: <http://www.w3.org/ns/org#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?this
+WHERE {
+ ?this rdf:type foaf:Person .
+}""" .
+
+meps:Membership a sh:NodeShape;
+  rdfs:label "Membership"@en;
+  skos:example "https://data.europarl.europa.eu/membership/12345-m-999900001 , https://data.europarl.europa.eu/membership/12345-f-999900001";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 2;
+  sh:property meps:P34, meps:P35, meps:P36, meps:P37, meps:P38, meps:P39, meps:P40,
+    meps:P41, meps:P42;
+  sh:targetClass org:Membership .
+
+meps:Organization a sh:NodeShape;
+  rdfs:label "Organization"@en;
+  skos:example "https://data.europarl.europa.eu/org/1234";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 3;
+  sh:pattern "^https://data.europarl.europa.eu/org/.*$";
+  sh:property meps:P45, meps:P46, meps:P47;
+  sh:targetClass org:Organization .
+
+meps:ContactPoint a sh:NodeShape;
+  rdfs:label "Contact Point"@en;
+  skos:example "https://data.europarl.europa.eu/contact-point/58766-m-16341-M05047";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 4;
+  sh:pattern "^https://data.europarl.europa.eu/contact-point/.*$";
+  sh:property meps:P50, meps:P51, meps:P52, meps:P53;
+  sh:targetClass epvoc:ContactPoint .
+
+meps:OnlineAccount a sh:NodeShape;
+  rdfs:label "Online Account"@en;
+  skos:example "https://twitter.com/mariearenaps";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 5;
+  sh:property meps:P56, meps:P57;
+  sh:targetClass foaf:OnlineAccount .
+
+meps:Voice a sh:NodeShape;
+  rdfs:label "Voice"@en;
+  skos:example "https://data.europarl.europa.eu/tel/33388175139";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 6;
+  sh:pattern "^https://data.europarl.europa.eu/tel/[0-9]*$";
+  sh:property meps:P59, meps:P60;
+  sh:targetClass vcard:Voice .
+
+meps:Fax a sh:NodeShape;
+  rdfs:label "Fax"@en;
+  skos:example "https://data.europarl.europa.eu/tel/33388175139";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 7;
+  sh:pattern "^https://data.europarl.europa.eu/tel/[0-9]*$";
+  sh:property meps:P62, meps:P63;
+  sh:targetClass vcard:Fax .
+
+meps:ImageReference a sh:NodeShape;
+  rdfs:label "Reference to a Image"@en;
+  skos:example "https://www.europarl.europa.eu/mepphoto/124936.jpg";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 8;
+  sh:property meps:P65 .
+
+meps:ResourceReference a sh:NodeShape;
+  rdfs:label "Reference to a Resource"@en;
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 9;
+  sh:property meps:P67 .
+
+meps:DocumentReference a sh:NodeShape;
+  rdfs:label "Reference to a Document"@en;
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 10;
+  sh:property meps:P69 .
+
+meps:PeriodOfTimeReference a sh:NodeShape;
+  rdfs:label "Reference to a Period Of Time"@en;
+  skos:example "https://data.europarl.europa.eu/time-period/pt_9";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 11;
+  sh:pattern "^https://data.europarl.europa.eu/time-period/.*$";
+  sh:property meps:P71, meps:P72, meps:P73 .
+
+meps:GenderReference a sh:NodeShape;
+  rdfs:label "Reference to a Gender"@en;
+  skos:example "http://publications.europa.eu/resource/authority/human-sex/FEMALE";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 12;
+  sh:pattern "http://publications.europa.eu/resource/authority/human-sex/.*$";
+  sh:property meps:P75, meps:P76 .
+
+meps:HonorificTitleReference a sh:NodeShape;
+  rdfs:label "Reference to a Honorific Title"@en;
+  skos:example "http://publications.europa.eu/resource/authority/honorific/MR";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 13;
+  sh:pattern "http://publications.europa.eu/resource/authority/honorific/.*$";
+  sh:property meps:P78, meps:P79 .
+
+meps:CountryReference a sh:NodeShape;
+  rdfs:label "Reference to a Country"@en;
+  skos:example "http://publications.europa.eu/resource/authority/country/BEL";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 14;
+  sh:pattern "http://publications.europa.eu/resource/authority/country/.*$";
+  sh:property meps:P81, meps:P82 .
+
+meps:AddressTypeReference a sh:NodeShape;
+  rdfs:label "Reference to a Address Type"@en;
+  skos:example "http://publications.europa.eu/resource/authority/address-type/TWT";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 15;
+  sh:pattern "http://publications.europa.eu/resource/authority/address-type/.*$";
+  sh:property meps:P84, meps:P85 .
+
+meps:RoleReference a sh:NodeShape;
+  rdfs:label "Reference to a Role"@en;
+  skos:example "http://publications.europa.eu/resource/authority/role/MEMBER_EP";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 16;
+  sh:pattern "http://publications.europa.eu/resource/authority/role/.*$";
+  sh:property meps:P90, meps:P91 .
+
+meps:CorporateBodyClassificationReference a sh:NodeShape;
+  rdfs:label "Reference to a Corporate Body Classification"@en;
+  skos:example "http://publications.europa.eu/resource/authority/corporate-body-classification/EP_GROUP";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 17;
+  sh:pattern "http://publications.europa.eu/resource/authority/corporate-body-classification/.*$";
+  sh:property meps:P87, meps:P88 .
+
+meps:SiteReference a sh:NodeShape;
+  rdfs:label "Reference to a Site"@en;
+  skos:example "http://publications.europa.eu/resource/authority/site/ASP";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 18;
+  sh:pattern "http://publications.europa.eu/resource/authority/site/.*$";
+  sh:property meps:P93, meps:P94 .
+
+meps:P9 sh:hasValue foaf:Person;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P10 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Identifier"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcterms:identifier .
+
+meps:P11 sh:datatype epvoc:codictPersonId;
+  sh:minCount 1;
+  sh:name "Notation"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:notation .
+
+meps:P12 sh:datatype xsd:string;
+  sh:minCount 1;
+  sh:name "Label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path rdfs:label .
+
+meps:P13 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Given name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path foaf:givenName .
+
+meps:P14 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Family name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path foaf:familyName .
+
+meps:P15 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Upper given name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path epvoc:upperGivenName .
+
+meps:P16 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Upper family name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path epvoc:upperFamilyName .
+
+meps:P17 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Official given name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path euvoc:officialGivenName .
+
+meps:P18 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Official family name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path euvoc:officialFamilyName .
+
+meps:P19 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Uppercase official given name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path epvoc:upperOfficialGivenName .
+
+meps:P20 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Uppercase official family name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path epvoc:upperOfficialFamilyName .
+
+meps:P21 sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:name "Birthday"@en;
+  sh:nodeKind sh:Literal;
+  sh:path vcard:bday .
+
+meps:P22 sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:name "Death date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path epvoc:deathDate .
+
+meps:P23 sh:maxCount 1;
+  sh:name "Has gender"@en;
+  sh:node meps:GenderReference;
+  sh:nodeKind sh:IRI;
+  sh:path vcard:hasGender .
+
+meps:P24 sh:maxCount 1;
+  sh:name "Image"@en;
+  sh:node meps:ImageReference;
+  sh:nodeKind sh:IRI;
+  sh:path foaf:img .
+
+meps:P25 sh:name "Has honorific prefix"@en;
+  sh:node meps:HonorificTitleReference;
+  sh:nodeKind sh:IRI;
+  sh:path vcard:hasHonorificPrefix .
+
+meps:P26 sh:name "Citizenship"@en;
+  sh:node meps:CountryReference;
+  sh:nodeKind sh:IRI;
+  sh:path person:citizenship .
+
+meps:P27 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Place of birth"@en;
+  sh:nodeKind sh:Literal;
+  sh:path person:placeOfBirth .
+
+meps:P28 sh:name "Has email"@en;
+  sh:node meps:ResourceReference;
+  sh:nodeKind sh:IRI;
+  sh:path vcard:hasEmail .
+
+meps:P29 sh:name "Homepage"@en;
+  sh:node meps:DocumentReference;
+  sh:nodeKind sh:IRI;
+  sh:path foaf:homepage .
+
+meps:P30 sh:name "Account"@en;
+  sh:node meps:OnlineAccount;
+  sh:nodeKind sh:IRI;
+  sh:path foaf:account .
+
+meps:P31 sh:name "Has membership"@en;
+  sh:node meps:Membership;
+  sh:nodeKind sh:IRI;
+  sh:path org:hasMembership .
+
+meps:P34 sh:hasValue org:Membership;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P35 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Membership id"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcterms:identifier .
+
+meps:P36 sh:minCount 1;
+  sh:name "Notation"@en;
+  sh:nodeKind sh:Literal;
+  sh:or _:node1goo957ugx2321 .
+
+_:node1goo957ugx2321 rdf:first _:node1goo957ugx2322 .
+
+_:node1goo957ugx2322 sh:datatype epvoc:codictFunctionId .
+
+_:node1goo957ugx2321 rdf:rest _:node1goo957ugx2323 .
+
+_:node1goo957ugx2323 rdf:first _:node1goo957ugx2324 .
+
+_:node1goo957ugx2324 sh:datatype epvoc:codictMandateId .
+
+_:node1goo957ugx2323 rdf:rest rdf:nil .
+
+meps:P36 sh:path skos:notation .
+
+meps:P37 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Member during"@en;
+  sh:node meps:PeriodOfTimeReference;
+  sh:nodeKind sh:IRI;
+  sh:path org:memberDuring .
+
+meps:P38 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Role"@en;
+  sh:node meps:RoleReference;
+  sh:nodeKind sh:IRI;
+  sh:path org:role .
+
+meps:P39 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Organization"@en;
+  sh:node meps:Organization;
+  sh:nodeKind sh:IRI;
+  sh:path org:organization .
+
+meps:P40 sh:maxCount 1;
+  sh:name "Represents"@en;
+  sh:node meps:CountryReference;
+  sh:nodeKind sh:IRI;
+  sh:path euvoc:represents .
+
+meps:P41 sh:name "Contact point"@en;
+  sh:node meps:ContactPoint;
+  sh:nodeKind sh:IRI;
+  sh:path dcat:contactPoint .
+
+meps:P42 sh:maxCount 1;
+  sh:name "Membership Classification"@en;
+  sh:node meps:CorporateBodyClassificationReference;
+  sh:nodeKind sh:IRI;
+  sh:path epvoc:membershipClassification .
+
+meps:P45 sh:hasValue org:Organization;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P46 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2325 .
+
+_:node1goo957ugx2325 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2326 .
+
+_:node1goo957ugx2326 rdf:first "es";
+  rdf:rest _:node1goo957ugx2327 .
+
+_:node1goo957ugx2327 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2328 .
+
+_:node1goo957ugx2328 rdf:first "da";
+  rdf:rest _:node1goo957ugx2329 .
+
+_:node1goo957ugx2329 rdf:first "de";
+  rdf:rest _:node1goo957ugx2330 .
+
+_:node1goo957ugx2330 rdf:first "et";
+  rdf:rest _:node1goo957ugx2331 .
+
+_:node1goo957ugx2331 rdf:first "el";
+  rdf:rest _:node1goo957ugx2332 .
+
+_:node1goo957ugx2332 rdf:first "en";
+  rdf:rest _:node1goo957ugx2333 .
+
+_:node1goo957ugx2333 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2334 .
+
+_:node1goo957ugx2334 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2335 .
+
+_:node1goo957ugx2335 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2336 .
+
+_:node1goo957ugx2336 rdf:first "it";
+  rdf:rest _:node1goo957ugx2337 .
+
+_:node1goo957ugx2337 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2338 .
+
+_:node1goo957ugx2338 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2339 .
+
+_:node1goo957ugx2339 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2340 .
+
+_:node1goo957ugx2340 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2341 .
+
+_:node1goo957ugx2341 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2342 .
+
+_:node1goo957ugx2342 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2343 .
+
+_:node1goo957ugx2343 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2344 .
+
+_:node1goo957ugx2344 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2345 .
+
+_:node1goo957ugx2345 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2346 .
+
+_:node1goo957ugx2346 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2347 .
+
+_:node1goo957ugx2347 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2348 .
+
+_:node1goo957ugx2348 rdf:first "sv";
+  rdf:rest _:node1goo957ugx2349 .
+
+_:node1goo957ugx2349 rdf:first "lb";
+  rdf:rest rdf:nil .
+
+meps:P46 sh:minCount 1;
+  sh:name "Preferred label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P47 sh:minCount 1;
+  sh:name "Classification"@en;
+  sh:node meps:CorporateBodyClassificationReference;
+  sh:nodeKind sh:IRI;
+  sh:path org:classification .
+
+meps:P50 sh:hasValue epvoc:ContactPoint;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P51 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:name "Office address"@en;
+  sh:nodeKind sh:Literal;
+  sh:path euvoc:officeAddress .
+
+meps:P52 sh:maxCount 1;
+  sh:name "Has site"@en;
+  sh:node meps:SiteReference;
+  sh:nodeKind sh:IRI;
+  sh:path epvoc:hasSite .
+
+meps:P53 sh:name "Has telephone"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:node1goo957ugx2350 .
+
+_:node1goo957ugx2350 rdf:first _:node1goo957ugx2351 .
+
+_:node1goo957ugx2351 sh:node meps:Voice .
+
+_:node1goo957ugx2350 rdf:rest _:node1goo957ugx2352 .
+
+_:node1goo957ugx2352 rdf:first _:node1goo957ugx2353 .
+
+_:node1goo957ugx2353 sh:node meps:Fax .
+
+_:node1goo957ugx2352 rdf:rest rdf:nil .
+
+meps:P53 sh:path vcard:hasTelephone .
+
+meps:P56 sh:hasValue foaf:OnlineAccount;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P57 sh:maxCount 1;
+  sh:name "Type"@en;
+  sh:node meps:AddressTypeReference;
+  sh:nodeKind sh:IRI;
+  sh:path dcterms:type .
+
+meps:P59 sh:hasValue vcard:Voice;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P60 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Has value"@en;
+  sh:node meps:ResourceReference;
+  sh:nodeKind sh:IRI;
+  sh:path vcard:hasValue .
+
+meps:P62 sh:hasValue vcard:Fax;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P63 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Has value"@en;
+  sh:node meps:ResourceReference;
+  sh:nodeKind sh:IRI;
+  sh:path vcard:hasValue .
+
+meps:P65 sh:hasValue foaf:Image;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P67 sh:hasValue rdfs:Resource;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P69 sh:hasValue foaf:Document;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P71 sh:hasValue dcterms:PeriodOfTime;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P72 sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Start date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcat:startDate .
+
+meps:P73 sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:name "End date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcat:endDate .
+
+meps:P75 sh:hasValue vcard:Gender;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P76 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2354 .
+
+_:node1goo957ugx2354 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2355 .
+
+_:node1goo957ugx2355 rdf:first "es";
+  rdf:rest _:node1goo957ugx2356 .
+
+_:node1goo957ugx2356 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2357 .
+
+_:node1goo957ugx2357 rdf:first "da";
+  rdf:rest _:node1goo957ugx2358 .
+
+_:node1goo957ugx2358 rdf:first "de";
+  rdf:rest _:node1goo957ugx2359 .
+
+_:node1goo957ugx2359 rdf:first "et";
+  rdf:rest _:node1goo957ugx2360 .
+
+_:node1goo957ugx2360 rdf:first "el";
+  rdf:rest _:node1goo957ugx2361 .
+
+_:node1goo957ugx2361 rdf:first "en";
+  rdf:rest _:node1goo957ugx2362 .
+
+_:node1goo957ugx2362 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2363 .
+
+_:node1goo957ugx2363 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2364 .
+
+_:node1goo957ugx2364 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2365 .
+
+_:node1goo957ugx2365 rdf:first "it";
+  rdf:rest _:node1goo957ugx2366 .
+
+_:node1goo957ugx2366 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2367 .
+
+_:node1goo957ugx2367 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2368 .
+
+_:node1goo957ugx2368 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2369 .
+
+_:node1goo957ugx2369 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2370 .
+
+_:node1goo957ugx2370 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2371 .
+
+_:node1goo957ugx2371 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2372 .
+
+_:node1goo957ugx2372 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2373 .
+
+_:node1goo957ugx2373 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2374 .
+
+_:node1goo957ugx2374 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2375 .
+
+_:node1goo957ugx2375 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2376 .
+
+_:node1goo957ugx2376 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2377 .
+
+_:node1goo957ugx2377 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+meps:P76 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P78 sh:hasValue euvoc:HonorificTitle;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P79 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2378 .
+
+_:node1goo957ugx2378 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2379 .
+
+_:node1goo957ugx2379 rdf:first "es";
+  rdf:rest _:node1goo957ugx2380 .
+
+_:node1goo957ugx2380 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2381 .
+
+_:node1goo957ugx2381 rdf:first "da";
+  rdf:rest _:node1goo957ugx2382 .
+
+_:node1goo957ugx2382 rdf:first "de";
+  rdf:rest _:node1goo957ugx2383 .
+
+_:node1goo957ugx2383 rdf:first "et";
+  rdf:rest _:node1goo957ugx2384 .
+
+_:node1goo957ugx2384 rdf:first "el";
+  rdf:rest _:node1goo957ugx2385 .
+
+_:node1goo957ugx2385 rdf:first "en";
+  rdf:rest _:node1goo957ugx2386 .
+
+_:node1goo957ugx2386 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2387 .
+
+_:node1goo957ugx2387 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2388 .
+
+_:node1goo957ugx2388 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2389 .
+
+_:node1goo957ugx2389 rdf:first "it";
+  rdf:rest _:node1goo957ugx2390 .
+
+_:node1goo957ugx2390 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2391 .
+
+_:node1goo957ugx2391 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2392 .
+
+_:node1goo957ugx2392 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2393 .
+
+_:node1goo957ugx2393 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2394 .
+
+_:node1goo957ugx2394 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2395 .
+
+_:node1goo957ugx2395 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2396 .
+
+_:node1goo957ugx2396 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2397 .
+
+_:node1goo957ugx2397 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2398 .
+
+_:node1goo957ugx2398 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2399 .
+
+_:node1goo957ugx2399 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2400 .
+
+_:node1goo957ugx2400 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2401 .
+
+_:node1goo957ugx2401 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+meps:P79 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P81 sh:hasValue euvoc:Country;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P82 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2402 .
+
+_:node1goo957ugx2402 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2403 .
+
+_:node1goo957ugx2403 rdf:first "es";
+  rdf:rest _:node1goo957ugx2404 .
+
+_:node1goo957ugx2404 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2405 .
+
+_:node1goo957ugx2405 rdf:first "da";
+  rdf:rest _:node1goo957ugx2406 .
+
+_:node1goo957ugx2406 rdf:first "de";
+  rdf:rest _:node1goo957ugx2407 .
+
+_:node1goo957ugx2407 rdf:first "et";
+  rdf:rest _:node1goo957ugx2408 .
+
+_:node1goo957ugx2408 rdf:first "el";
+  rdf:rest _:node1goo957ugx2409 .
+
+_:node1goo957ugx2409 rdf:first "en";
+  rdf:rest _:node1goo957ugx2410 .
+
+_:node1goo957ugx2410 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2411 .
+
+_:node1goo957ugx2411 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2412 .
+
+_:node1goo957ugx2412 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2413 .
+
+_:node1goo957ugx2413 rdf:first "it";
+  rdf:rest _:node1goo957ugx2414 .
+
+_:node1goo957ugx2414 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2415 .
+
+_:node1goo957ugx2415 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2416 .
+
+_:node1goo957ugx2416 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2417 .
+
+_:node1goo957ugx2417 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2418 .
+
+_:node1goo957ugx2418 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2419 .
+
+_:node1goo957ugx2419 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2420 .
+
+_:node1goo957ugx2420 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2421 .
+
+_:node1goo957ugx2421 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2422 .
+
+_:node1goo957ugx2422 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2423 .
+
+_:node1goo957ugx2423 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2424 .
+
+_:node1goo957ugx2424 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2425 .
+
+_:node1goo957ugx2425 rdf:first "sv";
+  rdf:rest _:node1goo957ugx2426 .
+
+_:node1goo957ugx2426 rdf:first "eu";
+  rdf:rest _:node1goo957ugx2427 .
+
+_:node1goo957ugx2427 rdf:first "sq";
+  rdf:rest _:node1goo957ugx2428 .
+
+_:node1goo957ugx2428 rdf:first "ca";
+  rdf:rest _:node1goo957ugx2429 .
+
+_:node1goo957ugx2429 rdf:first "tr";
+  rdf:rest _:node1goo957ugx2430 .
+
+_:node1goo957ugx2430 rdf:first "lb";
+  rdf:rest _:node1goo957ugx2431 .
+
+_:node1goo957ugx2431 rdf:first "is";
+  rdf:rest _:node1goo957ugx2432 .
+
+_:node1goo957ugx2432 rdf:first "rm";
+  rdf:rest _:node1goo957ugx2433 .
+
+_:node1goo957ugx2433 rdf:first "mk";
+  rdf:rest _:node1goo957ugx2434 .
+
+_:node1goo957ugx2434 rdf:first "sr";
+  rdf:rest _:node1goo957ugx2435 .
+
+_:node1goo957ugx2435 rdf:first "no";
+  rdf:rest _:node1goo957ugx2436 .
+
+_:node1goo957ugx2436 rdf:first "uk";
+  rdf:rest _:node1goo957ugx2437 .
+
+_:node1goo957ugx2437 rdf:first "bs";
+  rdf:rest _:node1goo957ugx2438 .
+
+_:node1goo957ugx2438 rdf:first "gl";
+  rdf:rest _:node1goo957ugx2439 .
+
+_:node1goo957ugx2439 rdf:first "fo";
+  rdf:rest _:node1goo957ugx2440 .
+
+_:node1goo957ugx2440 rdf:first "be";
+  rdf:rest _:node1goo957ugx2441 .
+
+_:node1goo957ugx2441 rdf:first "ru";
+  rdf:rest rdf:nil .
+
+meps:P82 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P84 sh:hasValue euvoc:AddressType;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P85 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2442 .
+
+_:node1goo957ugx2442 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2443 .
+
+_:node1goo957ugx2443 rdf:first "es";
+  rdf:rest _:node1goo957ugx2444 .
+
+_:node1goo957ugx2444 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2445 .
+
+_:node1goo957ugx2445 rdf:first "da";
+  rdf:rest _:node1goo957ugx2446 .
+
+_:node1goo957ugx2446 rdf:first "de";
+  rdf:rest _:node1goo957ugx2447 .
+
+_:node1goo957ugx2447 rdf:first "et";
+  rdf:rest _:node1goo957ugx2448 .
+
+_:node1goo957ugx2448 rdf:first "el";
+  rdf:rest _:node1goo957ugx2449 .
+
+_:node1goo957ugx2449 rdf:first "en";
+  rdf:rest _:node1goo957ugx2450 .
+
+_:node1goo957ugx2450 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2451 .
+
+_:node1goo957ugx2451 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2452 .
+
+_:node1goo957ugx2452 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2453 .
+
+_:node1goo957ugx2453 rdf:first "it";
+  rdf:rest _:node1goo957ugx2454 .
+
+_:node1goo957ugx2454 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2455 .
+
+_:node1goo957ugx2455 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2456 .
+
+_:node1goo957ugx2456 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2457 .
+
+_:node1goo957ugx2457 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2458 .
+
+_:node1goo957ugx2458 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2459 .
+
+_:node1goo957ugx2459 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2460 .
+
+_:node1goo957ugx2460 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2461 .
+
+_:node1goo957ugx2461 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2462 .
+
+_:node1goo957ugx2462 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2463 .
+
+_:node1goo957ugx2463 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2464 .
+
+_:node1goo957ugx2464 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2465 .
+
+_:node1goo957ugx2465 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+meps:P85 sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P87 sh:hasValue euvoc:CorporateBodyClassification;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P88 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2466 .
+
+_:node1goo957ugx2466 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2467 .
+
+_:node1goo957ugx2467 rdf:first "es";
+  rdf:rest _:node1goo957ugx2468 .
+
+_:node1goo957ugx2468 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2469 .
+
+_:node1goo957ugx2469 rdf:first "da";
+  rdf:rest _:node1goo957ugx2470 .
+
+_:node1goo957ugx2470 rdf:first "de";
+  rdf:rest _:node1goo957ugx2471 .
+
+_:node1goo957ugx2471 rdf:first "et";
+  rdf:rest _:node1goo957ugx2472 .
+
+_:node1goo957ugx2472 rdf:first "el";
+  rdf:rest _:node1goo957ugx2473 .
+
+_:node1goo957ugx2473 rdf:first "en";
+  rdf:rest _:node1goo957ugx2474 .
+
+_:node1goo957ugx2474 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2475 .
+
+_:node1goo957ugx2475 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2476 .
+
+_:node1goo957ugx2476 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2477 .
+
+_:node1goo957ugx2477 rdf:first "it";
+  rdf:rest _:node1goo957ugx2478 .
+
+_:node1goo957ugx2478 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2479 .
+
+_:node1goo957ugx2479 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2480 .
+
+_:node1goo957ugx2480 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2481 .
+
+_:node1goo957ugx2481 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2482 .
+
+_:node1goo957ugx2482 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2483 .
+
+_:node1goo957ugx2483 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2484 .
+
+_:node1goo957ugx2484 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2485 .
+
+_:node1goo957ugx2485 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2486 .
+
+_:node1goo957ugx2486 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2487 .
+
+_:node1goo957ugx2487 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2488 .
+
+_:node1goo957ugx2488 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2489 .
+
+_:node1goo957ugx2489 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+meps:P88 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P90 sh:hasValue org:Role;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P91 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2490 .
+
+_:node1goo957ugx2490 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2491 .
+
+_:node1goo957ugx2491 rdf:first "es";
+  rdf:rest _:node1goo957ugx2492 .
+
+_:node1goo957ugx2492 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2493 .
+
+_:node1goo957ugx2493 rdf:first "da";
+  rdf:rest _:node1goo957ugx2494 .
+
+_:node1goo957ugx2494 rdf:first "de";
+  rdf:rest _:node1goo957ugx2495 .
+
+_:node1goo957ugx2495 rdf:first "et";
+  rdf:rest _:node1goo957ugx2496 .
+
+_:node1goo957ugx2496 rdf:first "el";
+  rdf:rest _:node1goo957ugx2497 .
+
+_:node1goo957ugx2497 rdf:first "en";
+  rdf:rest _:node1goo957ugx2498 .
+
+_:node1goo957ugx2498 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2499 .
+
+_:node1goo957ugx2499 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2500 .
+
+_:node1goo957ugx2500 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2501 .
+
+_:node1goo957ugx2501 rdf:first "it";
+  rdf:rest _:node1goo957ugx2502 .
+
+_:node1goo957ugx2502 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2503 .
+
+_:node1goo957ugx2503 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2504 .
+
+_:node1goo957ugx2504 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2505 .
+
+_:node1goo957ugx2505 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2506 .
+
+_:node1goo957ugx2506 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2507 .
+
+_:node1goo957ugx2507 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2508 .
+
+_:node1goo957ugx2508 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2509 .
+
+_:node1goo957ugx2509 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2510 .
+
+_:node1goo957ugx2510 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2511 .
+
+_:node1goo957ugx2511 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2512 .
+
+_:node1goo957ugx2512 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2513 .
+
+_:node1goo957ugx2513 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+meps:P91 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+meps:P93 sh:hasValue org:Site;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+meps:P94 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2514 .
+
+_:node1goo957ugx2514 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2515 .
+
+_:node1goo957ugx2515 rdf:first "es";
+  rdf:rest _:node1goo957ugx2516 .
+
+_:node1goo957ugx2516 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2517 .
+
+_:node1goo957ugx2517 rdf:first "da";
+  rdf:rest _:node1goo957ugx2518 .
+
+_:node1goo957ugx2518 rdf:first "de";
+  rdf:rest _:node1goo957ugx2519 .
+
+_:node1goo957ugx2519 rdf:first "et";
+  rdf:rest _:node1goo957ugx2520 .
+
+_:node1goo957ugx2520 rdf:first "el";
+  rdf:rest _:node1goo957ugx2521 .
+
+_:node1goo957ugx2521 rdf:first "en";
+  rdf:rest _:node1goo957ugx2522 .
+
+_:node1goo957ugx2522 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2523 .
+
+_:node1goo957ugx2523 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2524 .
+
+_:node1goo957ugx2524 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2525 .
+
+_:node1goo957ugx2525 rdf:first "it";
+  rdf:rest _:node1goo957ugx2526 .
+
+_:node1goo957ugx2526 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2527 .
+
+_:node1goo957ugx2527 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2528 .
+
+_:node1goo957ugx2528 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2529 .
+
+_:node1goo957ugx2529 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2530 .
+
+_:node1goo957ugx2530 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2531 .
+
+_:node1goo957ugx2531 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2532 .
+
+_:node1goo957ugx2532 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2533 .
+
+_:node1goo957ugx2533 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2534 .
+
+_:node1goo957ugx2534 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2535 .
+
+_:node1goo957ugx2535 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2536 .
+
+_:node1goo957ugx2536 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2537 .
+
+_:node1goo957ugx2537 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+meps:P94 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
