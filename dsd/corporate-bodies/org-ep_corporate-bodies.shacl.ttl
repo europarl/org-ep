@@ -1,0 +1,560 @@
+@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix corporate-bodies: <https://data.europarl.europa.eu/def/corporate-bodies#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix eli-dl: <http://data.europa.eu/eli/eli-draft-legislation-ontology#> .
+@prefix epvoc: <https://data.europarl.europa.eu/def/epvoc#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix op-aut: <http://publications.europa.eu/resource/authority/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix org-ep: <https://data.europarl.europa.eu/def/org-ep#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.europarl.europa.eu/def/corporate-bodies#> a owl:Ontology, adms:Asset;
+  dcterms:conformsTo <https://www.w3.org/TR/shacl>;
+  dcterms:created "2021-11-18"^^xsd:date;
+  dcterms:creator <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:dateCopyrighted "2022"^^xsd:gYear;
+  dcterms:description "This Dataset Description is a subset of the general ORG-EP application profile and it includes classes and properties used in Corporate bodies datasets. Descriptions of classes and properties can be found in ORG-EP application profile."@en;
+  dcterms:license <https://www.europarl.europa.eu/legal-notice/en/>;
+  dcterms:publisher <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:rigthsHolder <http://publications.europa.eu/resource/dataset/corporate-body/EURUN>;
+  dcterms:title "Corporate bodies dataset description"@en;
+  dcterms:type <http://publications.europa.eu/resource/authority/dataset-type/APROF>;
+  rdfs:label "Corporate bodies dataset description"@en;
+  owl:versionIRI <https://data.europarl.europa.eu/def/corporate-bodies#>;
+  owl:versionInfo "1.0";
+  adms:status <http://publications.europa.eu/resource/dataset/dataset-status/COMPLETED>;
+  adms:versionNotes """1.0 - 2022-11-18
+- creation"""@en .
+
+corporate-bodies:Organization a sh:NodeShape;
+  rdfs:label "Organization"@en;
+  skos:example "https://data.europarl.europa.eu/org/1234";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 1;
+  sh:pattern "^https://data.europarl.europa.eu/org/.*$";
+  sh:property corporate-bodies:P10, corporate-bodies:P11, corporate-bodies:P12, corporate-bodies:P13,
+    corporate-bodies:P14, corporate-bodies:P15, corporate-bodies:P16, corporate-bodies:P17,
+    corporate-bodies:P18, corporate-bodies:P19, corporate-bodies:P20, corporate-bodies:P9;
+  sh:target corporate-bodies:Organization-target;
+  sh:targetClass org:Organization .
+
+corporate-bodies:Organization-target sh:select """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org: <http://www.w3.org/ns/org#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?this
+WHERE {
+ ?this rdf:type org:Organization .
+}""" .
+
+corporate-bodies:CountryReference a sh:NodeShape;
+  rdfs:label "Reference to a Country"@en;
+  skos:example "http://publications.europa.eu/resource/authority/country/BEL";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 2;
+  sh:pattern "^http://publications.europa.eu/resource/authority/country/.*$";
+  sh:property corporate-bodies:P23, corporate-bodies:P24 .
+
+corporate-bodies:PeriodOfTimeReference a sh:NodeShape;
+  rdfs:label "Reference to a Period Of Time"@en;
+  skos:example "https://data.europarl.europa.eu/time-period/pt_9";
+  sh:closed true;
+  sh:order 3;
+  sh:property corporate-bodies:P31, corporate-bodies:P32, corporate-bodies:P33 .
+
+corporate-bodies:CorporateBodyClassificationReference a sh:NodeShape;
+  rdfs:label "Reference to a Corporate Body Classification"@en;
+  skos:example "http://publications.europa.eu/resource/authority/corporate-body-classification/EP_GROUP";
+  sh:closed true;
+  sh:nodeKind sh:IRI;
+  sh:order 4;
+  sh:pattern "^http://publications.europa.eu/resource/authority/corporate-body-classification/.*$";
+  sh:property corporate-bodies:P27, corporate-bodies:P28 .
+
+corporate-bodies:P9 sh:hasValue org:Organization;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+corporate-bodies:P10 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Identifier"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcterms:identifier .
+
+corporate-bodies:P11 sh:datatype epvoc:codictBodyId;
+  sh:minCount 1;
+  sh:name "Notation"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:notation .
+
+corporate-bodies:P12 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path rdfs:label .
+
+corporate-bodies:P13 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2661 .
+
+_:node1goo957ugx2661 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2662 .
+
+_:node1goo957ugx2662 rdf:first "es";
+  rdf:rest _:node1goo957ugx2663 .
+
+_:node1goo957ugx2663 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2664 .
+
+_:node1goo957ugx2664 rdf:first "da";
+  rdf:rest _:node1goo957ugx2665 .
+
+_:node1goo957ugx2665 rdf:first "de";
+  rdf:rest _:node1goo957ugx2666 .
+
+_:node1goo957ugx2666 rdf:first "et";
+  rdf:rest _:node1goo957ugx2667 .
+
+_:node1goo957ugx2667 rdf:first "el";
+  rdf:rest _:node1goo957ugx2668 .
+
+_:node1goo957ugx2668 rdf:first "en";
+  rdf:rest _:node1goo957ugx2669 .
+
+_:node1goo957ugx2669 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2670 .
+
+_:node1goo957ugx2670 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2671 .
+
+_:node1goo957ugx2671 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2672 .
+
+_:node1goo957ugx2672 rdf:first "it";
+  rdf:rest _:node1goo957ugx2673 .
+
+_:node1goo957ugx2673 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2674 .
+
+_:node1goo957ugx2674 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2675 .
+
+_:node1goo957ugx2675 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2676 .
+
+_:node1goo957ugx2676 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2677 .
+
+_:node1goo957ugx2677 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2678 .
+
+_:node1goo957ugx2678 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2679 .
+
+_:node1goo957ugx2679 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2680 .
+
+_:node1goo957ugx2680 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2681 .
+
+_:node1goo957ugx2681 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2682 .
+
+_:node1goo957ugx2682 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2683 .
+
+_:node1goo957ugx2683 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2684 .
+
+_:node1goo957ugx2684 rdf:first "sv";
+  rdf:rest _:node1goo957ugx2685 .
+
+_:node1goo957ugx2685 rdf:first "lb";
+  rdf:rest rdf:nil .
+
+corporate-bodies:P13 sh:minCount 1;
+  sh:name "Preferred label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+corporate-bodies:P14 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2686 .
+
+_:node1goo957ugx2686 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2687 .
+
+_:node1goo957ugx2687 rdf:first "es";
+  rdf:rest _:node1goo957ugx2688 .
+
+_:node1goo957ugx2688 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2689 .
+
+_:node1goo957ugx2689 rdf:first "da";
+  rdf:rest _:node1goo957ugx2690 .
+
+_:node1goo957ugx2690 rdf:first "de";
+  rdf:rest _:node1goo957ugx2691 .
+
+_:node1goo957ugx2691 rdf:first "et";
+  rdf:rest _:node1goo957ugx2692 .
+
+_:node1goo957ugx2692 rdf:first "el";
+  rdf:rest _:node1goo957ugx2693 .
+
+_:node1goo957ugx2693 rdf:first "en";
+  rdf:rest _:node1goo957ugx2694 .
+
+_:node1goo957ugx2694 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2695 .
+
+_:node1goo957ugx2695 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2696 .
+
+_:node1goo957ugx2696 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2697 .
+
+_:node1goo957ugx2697 rdf:first "it";
+  rdf:rest _:node1goo957ugx2698 .
+
+_:node1goo957ugx2698 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2699 .
+
+_:node1goo957ugx2699 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2700 .
+
+_:node1goo957ugx2700 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2701 .
+
+_:node1goo957ugx2701 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2702 .
+
+_:node1goo957ugx2702 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2703 .
+
+_:node1goo957ugx2703 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2704 .
+
+_:node1goo957ugx2704 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2705 .
+
+_:node1goo957ugx2705 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2706 .
+
+_:node1goo957ugx2706 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2707 .
+
+_:node1goo957ugx2707 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2708 .
+
+_:node1goo957ugx2708 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2709 .
+
+_:node1goo957ugx2709 rdf:first "sv";
+  rdf:rest _:node1goo957ugx2710 .
+
+_:node1goo957ugx2710 rdf:first "lb";
+  rdf:rest rdf:nil .
+
+corporate-bodies:P14 sh:name "Alternative label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:altLabel;
+  sh:uniqueLang true .
+
+corporate-bodies:P15 sh:name "Linked to"@en;
+  sh:nodeKind sh:IRI;
+  sh:path org:linkedTo .
+
+corporate-bodies:P16 sh:name "Has suborganization"@en;
+  sh:nodeKind sh:IRI;
+  sh:path org:hasSubOrganization .
+
+corporate-bodies:P17 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Classification"@en;
+  sh:node corporate-bodies:CorporateBodyClassificationReference;
+  sh:nodeKind sh:IRI;
+  sh:path org:classification .
+
+corporate-bodies:P18 sh:name "Represents"@en;
+  sh:node corporate-bodies:CountryReference;
+  sh:nodeKind sh:IRI;
+  sh:path euvoc:represents .
+
+corporate-bodies:P19 sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Temporal"@en;
+  sh:node corporate-bodies:PeriodOfTimeReference;
+  sh:nodeKind sh:IRI;
+  sh:path dcterms:temporal .
+
+corporate-bodies:P20 sh:datatype xsd:string;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Source"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcterms:source .
+
+corporate-bodies:P23 sh:hasValue euvoc:Country;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+corporate-bodies:P24 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2711 .
+
+_:node1goo957ugx2711 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2712 .
+
+_:node1goo957ugx2712 rdf:first "es";
+  rdf:rest _:node1goo957ugx2713 .
+
+_:node1goo957ugx2713 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2714 .
+
+_:node1goo957ugx2714 rdf:first "da";
+  rdf:rest _:node1goo957ugx2715 .
+
+_:node1goo957ugx2715 rdf:first "de";
+  rdf:rest _:node1goo957ugx2716 .
+
+_:node1goo957ugx2716 rdf:first "et";
+  rdf:rest _:node1goo957ugx2717 .
+
+_:node1goo957ugx2717 rdf:first "el";
+  rdf:rest _:node1goo957ugx2718 .
+
+_:node1goo957ugx2718 rdf:first "en";
+  rdf:rest _:node1goo957ugx2719 .
+
+_:node1goo957ugx2719 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2720 .
+
+_:node1goo957ugx2720 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2721 .
+
+_:node1goo957ugx2721 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2722 .
+
+_:node1goo957ugx2722 rdf:first "it";
+  rdf:rest _:node1goo957ugx2723 .
+
+_:node1goo957ugx2723 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2724 .
+
+_:node1goo957ugx2724 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2725 .
+
+_:node1goo957ugx2725 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2726 .
+
+_:node1goo957ugx2726 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2727 .
+
+_:node1goo957ugx2727 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2728 .
+
+_:node1goo957ugx2728 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2729 .
+
+_:node1goo957ugx2729 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2730 .
+
+_:node1goo957ugx2730 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2731 .
+
+_:node1goo957ugx2731 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2732 .
+
+_:node1goo957ugx2732 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2733 .
+
+_:node1goo957ugx2733 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2734 .
+
+_:node1goo957ugx2734 rdf:first "sv";
+  rdf:rest _:node1goo957ugx2735 .
+
+_:node1goo957ugx2735 rdf:first "eu";
+  rdf:rest _:node1goo957ugx2736 .
+
+_:node1goo957ugx2736 rdf:first "sq";
+  rdf:rest _:node1goo957ugx2737 .
+
+_:node1goo957ugx2737 rdf:first "ca";
+  rdf:rest _:node1goo957ugx2738 .
+
+_:node1goo957ugx2738 rdf:first "tr";
+  rdf:rest _:node1goo957ugx2739 .
+
+_:node1goo957ugx2739 rdf:first "lb";
+  rdf:rest _:node1goo957ugx2740 .
+
+_:node1goo957ugx2740 rdf:first "is";
+  rdf:rest _:node1goo957ugx2741 .
+
+_:node1goo957ugx2741 rdf:first "rm";
+  rdf:rest _:node1goo957ugx2742 .
+
+_:node1goo957ugx2742 rdf:first "mk";
+  rdf:rest _:node1goo957ugx2743 .
+
+_:node1goo957ugx2743 rdf:first "sr";
+  rdf:rest _:node1goo957ugx2744 .
+
+_:node1goo957ugx2744 rdf:first "no";
+  rdf:rest _:node1goo957ugx2745 .
+
+_:node1goo957ugx2745 rdf:first "uk";
+  rdf:rest _:node1goo957ugx2746 .
+
+_:node1goo957ugx2746 rdf:first "bs";
+  rdf:rest _:node1goo957ugx2747 .
+
+_:node1goo957ugx2747 rdf:first "gl";
+  rdf:rest _:node1goo957ugx2748 .
+
+_:node1goo957ugx2748 rdf:first "fo";
+  rdf:rest _:node1goo957ugx2749 .
+
+_:node1goo957ugx2749 rdf:first "be";
+  rdf:rest _:node1goo957ugx2750 .
+
+_:node1goo957ugx2750 rdf:first "ru";
+  rdf:rest rdf:nil .
+
+corporate-bodies:P24 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+corporate-bodies:P27 sh:hasValue euvoc:CorporateBodyClassification;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+corporate-bodies:P28 sh:datatype rdf:langString;
+  sh:languageIn _:node1goo957ugx2751 .
+
+_:node1goo957ugx2751 rdf:first "bg";
+  rdf:rest _:node1goo957ugx2752 .
+
+_:node1goo957ugx2752 rdf:first "es";
+  rdf:rest _:node1goo957ugx2753 .
+
+_:node1goo957ugx2753 rdf:first "cs";
+  rdf:rest _:node1goo957ugx2754 .
+
+_:node1goo957ugx2754 rdf:first "da";
+  rdf:rest _:node1goo957ugx2755 .
+
+_:node1goo957ugx2755 rdf:first "de";
+  rdf:rest _:node1goo957ugx2756 .
+
+_:node1goo957ugx2756 rdf:first "et";
+  rdf:rest _:node1goo957ugx2757 .
+
+_:node1goo957ugx2757 rdf:first "el";
+  rdf:rest _:node1goo957ugx2758 .
+
+_:node1goo957ugx2758 rdf:first "en";
+  rdf:rest _:node1goo957ugx2759 .
+
+_:node1goo957ugx2759 rdf:first "fr";
+  rdf:rest _:node1goo957ugx2760 .
+
+_:node1goo957ugx2760 rdf:first "ga";
+  rdf:rest _:node1goo957ugx2761 .
+
+_:node1goo957ugx2761 rdf:first "hr";
+  rdf:rest _:node1goo957ugx2762 .
+
+_:node1goo957ugx2762 rdf:first "it";
+  rdf:rest _:node1goo957ugx2763 .
+
+_:node1goo957ugx2763 rdf:first "lv";
+  rdf:rest _:node1goo957ugx2764 .
+
+_:node1goo957ugx2764 rdf:first "lt";
+  rdf:rest _:node1goo957ugx2765 .
+
+_:node1goo957ugx2765 rdf:first "hu";
+  rdf:rest _:node1goo957ugx2766 .
+
+_:node1goo957ugx2766 rdf:first "mt";
+  rdf:rest _:node1goo957ugx2767 .
+
+_:node1goo957ugx2767 rdf:first "nl";
+  rdf:rest _:node1goo957ugx2768 .
+
+_:node1goo957ugx2768 rdf:first "pl";
+  rdf:rest _:node1goo957ugx2769 .
+
+_:node1goo957ugx2769 rdf:first "pt";
+  rdf:rest _:node1goo957ugx2770 .
+
+_:node1goo957ugx2770 rdf:first "ro";
+  rdf:rest _:node1goo957ugx2771 .
+
+_:node1goo957ugx2771 rdf:first "sk";
+  rdf:rest _:node1goo957ugx2772 .
+
+_:node1goo957ugx2772 rdf:first "sl";
+  rdf:rest _:node1goo957ugx2773 .
+
+_:node1goo957ugx2773 rdf:first "fi";
+  rdf:rest _:node1goo957ugx2774 .
+
+_:node1goo957ugx2774 rdf:first "sv";
+  rdf:rest rdf:nil .
+
+corporate-bodies:P28 sh:minCount 1;
+  sh:name "pref label"@en;
+  sh:nodeKind sh:Literal;
+  sh:path skos:prefLabel;
+  sh:uniqueLang true .
+
+corporate-bodies:P31 sh:hasValue dcterms:PeriodOfTime;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:path rdf:type .
+
+corporate-bodies:P32 sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Start date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcat:startDate .
+
+corporate-bodies:P33 sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:name "End date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcat:endDate .
