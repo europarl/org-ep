@@ -8,8 +8,8 @@ ORG-EP is an application profile of the [W3C Organization Ontology](https://www.
 - Latest version:
   - [HTML](index.html)
   - [SHACL](org-ep.shacl.ttl)
-- [Version 0.3.1](./0.3.1/)
-- [Version 1.0](./1.0/)
+- [Version 0.3.1](0.3.1/)
+- [Version 1.0](1.0/)
 
 ## ORG-EP at a glance
 
