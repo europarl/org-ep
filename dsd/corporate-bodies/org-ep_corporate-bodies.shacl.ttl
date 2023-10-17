@@ -1,0 +1,375 @@
+@prefix schema: <http://schema.org/> .
+@prefix corporate-bodies: <https://data.europarl.europa.eu/def/corporate-bodies#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix eli-dl: <http://data.europa.eu/eli/eli-draft-legislation-ontology#> .
+@prefix org-ep: <https://data.europarl.europa.eu/def/org-ep#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix epvoc: <https://data.europarl.europa.eu/def/epvoc#> .
+@prefix op-aut: <http://publications.europa.eu/resource/authority/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+<https://data.europarl.europa.eu/def/corporate-bodies#> a owl:Ontology, adms:Asset;
+  dcterms:type <http://publications.europa.eu/resource/authority/dataset-type/APROF>;
+  rdfs:label "Corporate bodies dataset description"@en;
+  dcterms:title "Corporate bodies dataset description"@en;
+  dcterms:description "This Dataset Description is a subset of the general ORG-EP application profile and it includes classes and properties used in Corporate bodies datasets. Descriptions of classes and properties can be found in ORG-EP application profile."@en;
+  owl:versionInfo "1.1";
+  adms:versionNotes """1.1 - 2023-04-13
+- remove external shapes (incl. controlled vocabularies data) in datasets.
+1.0 - 2022-11-18
+- creation"""@en;
+  adms:status <http://publications.europa.eu/resource/dataset/dataset-status/COMPLETED>;
+  owl:versionIRI <https://data.europarl.europa.eu/def/corporate-bodies#>;
+  dcterms:conformsTo <https://www.w3.org/TR/shacl>;
+  dcterms:created "2021-11-18"^^xsd:date;
+  dcterms:modified "2023-04-13T00:00:00.000Z"^^xsd:dateTime;
+  dcterms:dateCopyrighted "2022"^^xsd:gYear;
+  dcterms:license <https://www.europarl.europa.eu/legal-notice/en/>;
+  dcterms:creator <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:publisher <http://publications.europa.eu/resource/dataset/corporate-body/EP>;
+  dcterms:rigthsHolder <http://publications.europa.eu/resource/dataset/corporate-body/EURUN>;
+  dcat:distribution _:a2950a43c59347ed9378ba4420ba04c28400 .
+
+_:a2950a43c59347ed9378ba4420ba04c28400 dcterms:format <https://www.iana.org/assignments/media-types/text/turtle>;
+  dcat:downloadURL <https://europarl.github.io/org-ep/1.1/dsd/corporate-bodies/org-ep_corporate-bodies.shacl.ttl> .
+
+corporate-bodies:Organization a sh:NodeShape;
+  sh:target corporate-bodies:Organization-target;
+  sh:targetClass org:Organization;
+  skos:example "https://data.europarl.europa.eu/org/1234";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/org/.*$";
+  sh:closed "true"^^xsd:boolean;
+  rdfs:label "Organization"@en;
+  sh:order "1"^^xsd:integer;
+  sh:property corporate-bodies:P9, corporate-bodies:P10, corporate-bodies:P11, corporate-bodies:P12,
+    corporate-bodies:P13, corporate-bodies:P14, corporate-bodies:P15, corporate-bodies:P16,
+    corporate-bodies:P17, corporate-bodies:P18, corporate-bodies:P19, corporate-bodies:P20 .
+
+corporate-bodies:Organization-target sh:select """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org: <http://www.w3.org/ns/org#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?this
+WHERE {
+ ?this rdf:type org:Organization .
+}""" .
+
+corporate-bodies:PeriodOfTime a sh:NodeShape;
+  sh:targetClass dcterms:PeriodOfTime;
+  skos:example "https://data.europarl.europa.eu/time-period/20090714T080000000Z-20140629T215959000Z";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/time-period/.*$";
+  sh:closed "true"^^xsd:boolean;
+  rdfs:label "Reference to a Period Of Time"@en;
+  sh:order "3"^^xsd:integer;
+  sh:property corporate-bodies:P23, corporate-bodies:P24, corporate-bodies:P25 .
+
+corporate-bodies:CountryReference a sh:NodeShape;
+  skos:example "http://publications.europa.eu/resource/authority/country/BEL";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://publications.europa.eu/resource/authority/country/.*$";
+  sh:closed "true"^^xsd:boolean;
+  rdfs:label "Reference to a Country"@en;
+  sh:order "2"^^xsd:integer;
+  sh:property corporate-bodies:P28 .
+
+corporate-bodies:CorporateBodyClassificationReference a sh:NodeShape;
+  skos:example "http://publications.europa.eu/resource/authority/corporate-body-classification/EP_GROUP";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://publications.europa.eu/resource/authority/corporate-body-classification/.*$";
+  sh:closed "true"^^xsd:boolean;
+  rdfs:label "Reference to a Corporate Body Classification"@en;
+  sh:order "4"^^xsd:integer;
+  sh:property corporate-bodies:P32 .
+
+corporate-bodies:P9 owl:versionInfo "v1.0";
+  sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:hasValue org:Organization .
+
+corporate-bodies:P10 owl:versionInfo "v1.0";
+  sh:path dcterms:identifier;
+  sh:name "Identifier"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+corporate-bodies:P11 owl:versionInfo "v1.0";
+  sh:path skos:notation;
+  sh:name "Notation"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype epvoc:codictBodyId .
+
+corporate-bodies:P12 owl:versionInfo "v1.0";
+  sh:path rdfs:label;
+  sh:name "Label"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+corporate-bodies:P13 owl:versionInfo "v1.0";
+  sh:path skos:prefLabel;
+  sh:name "Preferred label"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString;
+  sh:uniqueLang "true"^^xsd:boolean;
+  sh:languageIn _:a2950a43c59347ed9378ba4420ba04c28401 .
+
+_:a2950a43c59347ed9378ba4420ba04c28401 rdf:first "bg";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28402 .
+
+_:a2950a43c59347ed9378ba4420ba04c28402 rdf:first "es";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28403 .
+
+_:a2950a43c59347ed9378ba4420ba04c28403 rdf:first "cs";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28404 .
+
+_:a2950a43c59347ed9378ba4420ba04c28404 rdf:first "da";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28405 .
+
+_:a2950a43c59347ed9378ba4420ba04c28405 rdf:first "de";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28406 .
+
+_:a2950a43c59347ed9378ba4420ba04c28406 rdf:first "et";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28407 .
+
+_:a2950a43c59347ed9378ba4420ba04c28407 rdf:first "el";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28408 .
+
+_:a2950a43c59347ed9378ba4420ba04c28408 rdf:first "en";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28409 .
+
+_:a2950a43c59347ed9378ba4420ba04c28409 rdf:first "fr";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28410 .
+
+_:a2950a43c59347ed9378ba4420ba04c28410 rdf:first "ga";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28411 .
+
+_:a2950a43c59347ed9378ba4420ba04c28411 rdf:first "hr";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28412 .
+
+_:a2950a43c59347ed9378ba4420ba04c28412 rdf:first "it";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28413 .
+
+_:a2950a43c59347ed9378ba4420ba04c28413 rdf:first "lv";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28414 .
+
+_:a2950a43c59347ed9378ba4420ba04c28414 rdf:first "lt";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28415 .
+
+_:a2950a43c59347ed9378ba4420ba04c28415 rdf:first "hu";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28416 .
+
+_:a2950a43c59347ed9378ba4420ba04c28416 rdf:first "mt";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28417 .
+
+_:a2950a43c59347ed9378ba4420ba04c28417 rdf:first "nl";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28418 .
+
+_:a2950a43c59347ed9378ba4420ba04c28418 rdf:first "pl";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28419 .
+
+_:a2950a43c59347ed9378ba4420ba04c28419 rdf:first "pt";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28420 .
+
+_:a2950a43c59347ed9378ba4420ba04c28420 rdf:first "ro";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28421 .
+
+_:a2950a43c59347ed9378ba4420ba04c28421 rdf:first "sk";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28422 .
+
+_:a2950a43c59347ed9378ba4420ba04c28422 rdf:first "sl";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28423 .
+
+_:a2950a43c59347ed9378ba4420ba04c28423 rdf:first "fi";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28424 .
+
+_:a2950a43c59347ed9378ba4420ba04c28424 rdf:first "sv";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28425 .
+
+_:a2950a43c59347ed9378ba4420ba04c28425 rdf:first "lb";
+  rdf:rest rdf:nil .
+
+corporate-bodies:P14 owl:versionInfo "v1.0";
+  sh:path skos:altLabel;
+  sh:name "Alternative label"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString;
+  sh:uniqueLang "true"^^xsd:boolean;
+  sh:languageIn _:a2950a43c59347ed9378ba4420ba04c28426 .
+
+_:a2950a43c59347ed9378ba4420ba04c28426 rdf:first "bg";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28427 .
+
+_:a2950a43c59347ed9378ba4420ba04c28427 rdf:first "es";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28428 .
+
+_:a2950a43c59347ed9378ba4420ba04c28428 rdf:first "cs";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28429 .
+
+_:a2950a43c59347ed9378ba4420ba04c28429 rdf:first "da";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28430 .
+
+_:a2950a43c59347ed9378ba4420ba04c28430 rdf:first "de";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28431 .
+
+_:a2950a43c59347ed9378ba4420ba04c28431 rdf:first "et";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28432 .
+
+_:a2950a43c59347ed9378ba4420ba04c28432 rdf:first "el";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28433 .
+
+_:a2950a43c59347ed9378ba4420ba04c28433 rdf:first "en";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28434 .
+
+_:a2950a43c59347ed9378ba4420ba04c28434 rdf:first "fr";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28435 .
+
+_:a2950a43c59347ed9378ba4420ba04c28435 rdf:first "ga";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28436 .
+
+_:a2950a43c59347ed9378ba4420ba04c28436 rdf:first "hr";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28437 .
+
+_:a2950a43c59347ed9378ba4420ba04c28437 rdf:first "it";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28438 .
+
+_:a2950a43c59347ed9378ba4420ba04c28438 rdf:first "lv";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28439 .
+
+_:a2950a43c59347ed9378ba4420ba04c28439 rdf:first "lt";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28440 .
+
+_:a2950a43c59347ed9378ba4420ba04c28440 rdf:first "hu";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28441 .
+
+_:a2950a43c59347ed9378ba4420ba04c28441 rdf:first "mt";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28442 .
+
+_:a2950a43c59347ed9378ba4420ba04c28442 rdf:first "nl";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28443 .
+
+_:a2950a43c59347ed9378ba4420ba04c28443 rdf:first "pl";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28444 .
+
+_:a2950a43c59347ed9378ba4420ba04c28444 rdf:first "pt";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28445 .
+
+_:a2950a43c59347ed9378ba4420ba04c28445 rdf:first "ro";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28446 .
+
+_:a2950a43c59347ed9378ba4420ba04c28446 rdf:first "sk";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28447 .
+
+_:a2950a43c59347ed9378ba4420ba04c28447 rdf:first "sl";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28448 .
+
+_:a2950a43c59347ed9378ba4420ba04c28448 rdf:first "fi";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28449 .
+
+_:a2950a43c59347ed9378ba4420ba04c28449 rdf:first "sv";
+  rdf:rest _:a2950a43c59347ed9378ba4420ba04c28450 .
+
+_:a2950a43c59347ed9378ba4420ba04c28450 rdf:first "lb";
+  rdf:rest rdf:nil .
+
+corporate-bodies:P15 owl:versionInfo "v1.0";
+  sh:path org:linkedTo;
+  sh:name "Linked to"@en;
+  sh:nodeKind sh:IRI .
+
+corporate-bodies:P16 owl:versionInfo "v1.0";
+  sh:path org:hasSubOrganization;
+  sh:name "Has suborganization"@en;
+  sh:nodeKind sh:IRI .
+
+corporate-bodies:P17 owl:versionInfo "v1.1";
+  sh:path org:classification;
+  sh:name "Classification"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node corporate-bodies:CorporateBodyClassificationReference;
+  sh:deactivated "true"^^xsd:boolean .
+
+corporate-bodies:P18 owl:versionInfo "v1.1";
+  sh:path euvoc:represents;
+  sh:name "Represents"@en;
+  sh:nodeKind sh:IRI;
+  sh:node corporate-bodies:CountryReference;
+  sh:deactivated "true"^^xsd:boolean .
+
+corporate-bodies:P19 owl:versionInfo "v1.1";
+  sh:path dcterms:temporal;
+  sh:name "Temporal"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node corporate-bodies:PeriodOfTime .
+
+corporate-bodies:P20 owl:versionInfo "v1.0";
+  sh:path dcterms:source;
+  sh:name "Source"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+corporate-bodies:P23 owl:versionInfo "v1.1";
+  sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:hasValue dcterms:PeriodOfTime .
+
+corporate-bodies:P24 owl:versionInfo "v1.1";
+  sh:path dcat:startDate;
+  sh:name "Start date"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime .
+
+corporate-bodies:P25 owl:versionInfo "v1.1";
+  sh:path dcat:endDate;
+  sh:name "End date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime .
+
+corporate-bodies:P28 owl:versionInfo "v1.1";
+  sh:path rdf:type;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:hasValue euvoc:Country .
+
+corporate-bodies:P32 owl:versionInfo "v1.1";
+  sh:path rdf:type;
+  sh:name "type"@en;
+  sh:nodeKind sh:IRI;
+  sh:hasValue euvoc:CorporateBodyClassification .
