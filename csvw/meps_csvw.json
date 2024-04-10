@@ -1,175 +1,174 @@
 {
   "@context": "http://www.w3.org/ns/csvw",
-  "dc:license": {
+  "dcterms:license": {
     "@id": "https://www.europarl.europa.eu/legal-notice"
   },
   "dc:modified": {
     "@type": "xsd:date",
-    "@value": "2023-04-28"
+    "@value": "2024-04-10"
   },
-  "dc:publisher": "European Parliament",
-  "dc:title": "meps_csvw",
-  "url": "https://data.europarl.europa.eu/def/meps_csvw.json",
-  "tables":[
-		{
-			"url":"meps.csv",
-			"tableSchema": {
-	"columns":[
-		{
-			"name":"mep_identifier",
-			"propertyUrl":"dc:identifier",
-			"constraints":{
-				"required":true,
-				"type":"http://www.w3.org/2001/XMLSchema#int"
-			}
-		},
-		{
-			"name":"mep_honorific_prefix",
-			"propertyUrl":"vcard:hasHonorificPrefix",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_given_name",
-			"propertyUrl":"foaf:givenName",
-			"constraints":{
-				"required":true,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_family_name",
-			"propertyUrl":"foaf:familyName",
-			"constraints":{
-				"required":true,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_official_given_name",
-			"propertyUrl":"euvoc:officialGivenName",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_official_family_name",
-			"propertyUrl":"euvoc:officialFamilyName",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_gender",
-			"propertyUrl":"vcard:hasGender",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_citizenship",
-			"propertyUrl":"person:citizenship",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_place_of_birth",
-			"propertyUrl":"person:placeOfBirth",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_birthday",
-			"propertyUrl":"vcard:bday",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#dateTime"
-			}
-		},
-		{
-			"name":"mep_death_date",
-			"propertyUrl":"epvoc:deathDate",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#dateTime"
-			}
-		},
-		{
-			"name":"mep_image",
-			"propertyUrl":"foaf:mage",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#anyURI"
-			}
-		},
-		{
-			"name":"mep_email",
-			"propertyUrl":"vcard:hasEmail",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_homepage",
-			"propertyUrl":"foaf:homepage",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_twitter",
-			"propertyUrl":"foaf:account",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_facebook_page",
-			"propertyUrl":"foaf:account",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_facebook_profile",
-			"propertyUrl":"foaf:account",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_instagram",
-			"propertyUrl":"foaf:account",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"mep_URI",
-			"constraints":{
-				"required":true,
-				"type":"http://www.w3.org/2001/XMLSchema#anyURI"
-			}
-		}
-	],
-	"primaryKey":"mep_identifier",
-	"sh:select":"meps-by-id_csv.rq"
-}
-		}
+  "dcterms:publisher": "European Parliament",
+  "dcterms:title": "meps",
+  "url": "https://data.europarl.europa.eu/def/meps-csvw.json",
+  "tables": [
+    {
+      "url": "meps_csvw.json",
+      "tableSchema": {
+        "fields": [
+          {
+            "name": "dcterms:identifier",
+            "propertyUrl": "mep_identifier",
+            "constraints": {
+              "required": false,
+              "datatype": "TRUE"
+            }
+          },
+          {
+            "name": "vcard:hasHonorificPrefix",
+            "propertyUrl": "mep_honorific_prefix",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:givenName",
+            "propertyUrl": "mep_given_name",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:familyName",
+            "propertyUrl": "mep_family_name",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "euvoc:officialGivenName",
+            "propertyUrl": "mep_official_given_name",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "euvoc:officialFamilyName",
+            "propertyUrl": "mep_official_family_name",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "vcard:hasGender",
+            "propertyUrl": "mep_gender",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "person:citizenship",
+            "propertyUrl": "mep_citizenship",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "person:placeOfBirth",
+            "propertyUrl": "mep_place_of_birth",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "vcard:bday",
+            "propertyUrl": "mep_birthday",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "epvoc:deathDate",
+            "propertyUrl": "mep_death_date",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:img",
+            "propertyUrl": "mep_image",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "vcard:hasEmail",
+            "propertyUrl": "mep_email",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:homepage",
+            "propertyUrl": "mep_homepage",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:account",
+            "propertyUrl": "mep_twitter",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:account",
+            "propertyUrl": "mep_facebook_page",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:account",
+            "propertyUrl": "mep_facebook_profile",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "foaf:account",
+            "propertyUrl": "mep_instagram",
+            "constraints": {
+              "required": false,
+              "datatype": "FALSE"
+            }
+          },
+          {
+            "name": "URI",
+            "propertyUrl": "mep_URI",
+            "constraints": {
+              "required": false,
+              "datatype": "TRUE"
+            }
+          }
+        ]
+      }
+    }
   ]
 }
