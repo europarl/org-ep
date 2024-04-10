@@ -1,119 +1,118 @@
 {
   "@context": "http://www.w3.org/ns/csvw",
-  "dc:license": {
+  "dcterms:license": {
     "@id": "https://www.europarl.europa.eu/legal-notice"
   },
   "dc:modified": {
     "@type": "xsd:date",
-    "@value": "2023-04-28"
+    "@value": "2024-04-10"
   },
-  "dc:publisher": "European Parliament",
-  "dc:title": "corporate-bodies_csv",
-  "url": "https://data.europarl.europa.eu/def/corporate-bodies_csvw.json",
-  "tables":[
-		{
-			"url":"corporate-bodies.csv",
-			"tableSchema": { 
-	"columns":[
-		{
-			"name": "corporate_body_identifier",
-			"propertyUrl": "dc:identifier",
-			"constraints":{
-				"required":true,
-				"type":"http://www.w3.org/2001/XMLSchema#int"
-			}
-		},
-		{
-			"name":"corporate_body_label",
-			"propertyUrl":"rdfs:label",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"corporate_body_preferred_label",
-			"propertyUrl":"skos:prefLabel",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"corporate_body_alternative_label",
-			"propertyUrl":"skos:altLabel",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"corporate_body_classification_label",
-			"propertyUrl":"org:classification",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},	
-		{
-			"name":"corporate_body_classification_code",
-			"propertyUrl":"dc:identifier",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"corporate_body_start_date",
-			"propertyUrl":"dcat:startDate",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#dateTime"
-			}
-		},
-		{
-			"name":"corporate_body_end_date",
-			"propertyUrl":"dcat:endDate",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#dateTime"
-			}
-		},
-		{
-			"name":"corporate_body_represents",
-			"propertyUrl":"euvoc:represents",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-			"name":"corporate_body_linked_to",
-			"propertyUrl":"org:linkedTo",
-			"constraints":{
-				"required":false,
-				"type":"http://www.w3.org/2001/XMLSchema#string"
-			}
-		},
-		{
-		"name":"corporate_body_sub_organization",
-		"propertyUrl":"org:hasSubOrganization",
-		"constraints":{
-			"required":false,
-			"type":"http://www.w3.org/2001/XMLSchema#string"
-		}
-		},
-		{
-			"name":"corporate_body_URI",
-			"constraints":{
-				"required":true,
-				"type":"http://www.w3.org/2001/XMLSchema#anyURI"
-			}
-		}	
-	],
-	"primary-key":"corporate_body_identifier",
-	"sh:select":"corporate-bodies-by-id_csv.rq"
-}
-		}
+  "dcterms:publisher": "European Parliament",
+  "dcterms:title": "corporate-bodies",
+  "url": "https://data.europarl.europa.eu/def/corporate-bodies-csvw.json",
+  "tables": [
+    {
+      "url": "corporate-bodies_csvw.json",
+      "tableSchema": {
+        "fields": [
+          {
+            "name": "dcterms:identifier",
+            "propertyUrl": "corporate_body_identifier",
+            "constraints": {
+              "required": true,
+              "datatype": "xsd:string"
+            }
+          },
+          {
+            "name": "rdfs:label",
+            "propertyUrl": "corporate_body_label",
+            "constraints": {
+              "required": false,
+              "datatype": "rdf:langString"
+            }
+          },
+          {
+            "name": "skos:prefLabel",
+            "propertyUrl": "corporate_body_preferred_label",
+            "constraints": {
+              "required": false,
+              "datatype": "rdf:langString"
+            }
+          },
+          {
+            "name": "skos:altLabel",
+            "propertyUrl": "corporate_body_alternative_label",
+            "constraints": {
+              "required": false,
+              "datatype": "rdf:langString"
+            }
+          },
+          {
+            "name": "skos:prefLabel",
+            "propertyUrl": "corporate_body_classification_label",
+            "constraints": {
+              "required": false,
+              "datatype": "rdf:langString"
+            }
+          },
+          {
+            "name": "dc:identifier",
+            "propertyUrl": "corporate_body_classification_code",
+            "constraints": {
+              "required": false,
+              "datatype": "xsd:string"
+            }
+          },
+          {
+            "name": "dcat:startDate",
+            "propertyUrl": "corporate_body_start_date",
+            "constraints": {
+              "required": false,
+              "datatype": "xsd:date"
+            }
+          },
+          {
+            "name": "dcat:endDate",
+            "propertyUrl": "corporate_body_end_date",
+            "constraints": {
+              "required": false,
+              "datatype": "xsd:date"
+            }
+          },
+          {
+            "name": "euvoc:represents",
+            "propertyUrl": "corporate_body_represents",
+            "constraints": {
+              "required": false,
+              "datatype": "IRI"
+            }
+          },
+          {
+            "name": "org:linkedTo",
+            "propertyUrl": "corporate_body_linked_to",
+            "constraints": {
+              "required": false,
+              "datatype": "IRI"
+            }
+          },
+          {
+            "name": "org:hasSubOrganization",
+            "propertyUrl": "corporate_body_sub_organization",
+            "constraints": {
+              "required": false,
+              "datatype": "IRI"
+            }
+          },
+          {
+            "name": "URI",
+            "propertyUrl": "corporate_body_URI",
+            "constraints": {
+              "required": false,
+              "datatype": "IRI"
+            }
+          }
+        ]
+      }
+    }
   ]
 }
