@@ -63,7 +63,7 @@ _:a4aeb3f30c2042e3b539bc99a24f35721774 dcterms:format <https://www.iana.org/assi
   dcat:downloadURL <https://europarl.github.io/org-ep/1.1/dsd/corporate-bodies/org-ep_corporate-bodies.shacl.ttl> .
 
 _:a4aeb3f30c2042e3b539bc99a24f35721775 dcterms:format <https://www.iana.org/assignments/media-types/text/turtle>;
-  dcat:downloadURL <https://europarl.github.io/org-ep/dsd/corporate-bodies/org-ep_corporate-bodies.shacl.ttl> .
+  dcat:downloadURL <https://europarl.github.io/org-ep/2.1.0/dsd/corporate-bodies/org-ep_corporate-bodies.shacl.ttl> .
 
 corporate-bodies:Organization a sh:NodeShape;
   sh:target corporate-bodies:Organization-target;
