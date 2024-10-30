@@ -60,7 +60,7 @@ dcat:hasCurrentVersion). This body could be considered equivalent to \"skos:Conc
   dcat:distribution _:a4aeb3f30c2042e3b539bc99a24f35721745 .
 
 _:a4aeb3f30c2042e3b539bc99a24f35721745 dcterms:format <https://www.iana.org/assignments/media-types/text/turtle>;
-  dcat:downloadURL <https://europarl.github.io/org-ep/1.2/org-ep.shacl.ttl> .
+  dcat:downloadURL <https://europarl.github.io/org-ep/2.1.0/org-ep.shacl.ttl> .
 
 org:Organization a sh:NodeShape, rdfs:Class;
   skos:example <https://data.europarl.europa.eu/org/1234>;
