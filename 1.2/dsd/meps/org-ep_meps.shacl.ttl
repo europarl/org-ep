@@ -49,7 +49,7 @@
   dcat:distribution _:a2950a43c59347ed9378ba4420ba04c28366 .
 
 _:a2950a43c59347ed9378ba4420ba04c28366 dcterms:format <https://www.iana.org/assignments/media-types/text/turtle>;
-  dcat:downloadURL <https://europarl.github.io/org-ep/1.1/dsd/meps/org-ep_meps.shacl.ttl> .
+  dcat:downloadURL <https://europarl.github.io/org-ep/1.2/dsd/meps/org-ep_meps.shacl.ttl> .
 
 meps:Person a sh:NodeShape;
   sh:target meps:Person-target;
