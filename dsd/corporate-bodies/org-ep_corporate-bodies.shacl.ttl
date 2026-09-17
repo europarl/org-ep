@@ -333,7 +333,7 @@ corporate-bodies:P14 owl:versionInfo "2.1.0";
   sh:path org:linkedTo;
   sh:name "Linked to"@en;
   sh:nodeKind sh:IRI;
-  sh:node corporate-bodies:CorporateBodyReference .
+  sh:node org:Organization .
 
 corporate-bodies:P15 owl:versionInfo "2.0";
   sh:path dcterms:source;
