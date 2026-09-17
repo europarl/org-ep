@@ -1,4 +1,4 @@
-@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix corporate-bodies: <https://data.europarl.europa.eu/def/corporate-bodies#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .

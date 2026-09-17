@@ -13,7 +13,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
 @prefix eli-dl: <http://data.europa.eu/eli/eli-draft-legislation-ontology#> .
@@ -56,7 +56,7 @@ dcat:hasCurrentVersion). This body could be considered equivalent to \"skos:Conc
   dcterms:license <https://www.europarl.europa.eu/legal-notice/en/>;
   dcterms:creator <https://publications.europa.eu/resource/authority/corporate-body/EP>;
   dcterms:publisher <https://publications.europa.eu/resource/authority/corporate-body/EP>;
-  dcterms:rigthsHolder <https://publications.europa.eu/resource/authority/corporate-body/EURUN>;
+  dcterms:rightsHolder <https://publications.europa.eu/resource/authority/corporate-body/EURUN>;
   dcat:distribution _:a4aeb3f30c2042e3b539bc99a24f35721774, _:a4aeb3f30c2042e3b539bc99a24f35721775 .
 
 _:a4aeb3f30c2042e3b539bc99a24f35721774 dcterms:format <https://www.iana.org/assignments/media-types/text/turtle>;
@@ -333,7 +333,7 @@ corporate-bodies:P14 owl:versionInfo "2.1.0";
   sh:path org:linkedTo;
   sh:name "Linked to"@en;
   sh:nodeKind sh:IRI;
-  sh:node corporate-bodies:CorporateBodyReference .
+  sh:node org:Organization .
 
 corporate-bodies:P15 owl:versionInfo "2.0";
   sh:path dcterms:source;
